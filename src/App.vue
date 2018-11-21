@@ -1,7 +1,14 @@
-<template>
-  <div id="app">
-    <router-view :foods = "foods"/>
-  </div>
+<template lang="jade">
+  #app
+    .ui.menu
+      router-link.item(to="/" exact='')
+        i.home.icon
+        | 首頁
+      router-link.item(to="/thoughts" exact='')
+        i.comments.icon
+        | 想法
+    #main
+      router-view(:foods = "foods")
 </template>
 
 <script>
@@ -27,6 +34,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.router-link-active {
+  background-color: #ccf !important;
 }
 </style>

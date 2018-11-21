@@ -1,27 +1,20 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div class="ui from container">
-        <input v-model="mySearch" placeholder="以關鍵字搜詢" autofocus />
-    </div>
-    <hr/>
-    <div class="ui animated four doubling cards container">
-      <div class="ui card" v-for = "(f, index) in foods" v-bind:key="index" v-show = "has(f, mySearch)">
-        <div class="image">
-          <img :src="'/static/images/' + f.i" />
-        </div>
-        <div class="ui header">
-          {{f.t}}
-        </div>
-        <div class="description" v-if="f.p">
-          作法：
-          <ol class="ui ordered list">
-            <li class="item" v-for = "(p, idx) in f.p" v-bind:key="idx">{{ p }}</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<template lang = jade>
+.hello
+  h1 {{ msg }}
+  .ui.from.container
+    .ui.search
+      input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', autofocus='')
+  hr
+  .ui.animated.four.doubling.cards.container
+    .ui.card(v-for='(f, index) in foods', v-bind:key='index', v-show='has(f, mySearch)')
+      .image
+        img(:src="'/static/images/' + f.i")
+      .ui.header
+        | {{f.t}}
+      .description(v-if='f.p')
+        | 作法：
+        ol.ui.ordered.list
+          li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
 </template>
 
 <script>
