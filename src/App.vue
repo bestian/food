@@ -3,20 +3,20 @@
     .ui.menu
       router-link.item(to="/" exact='')
         i.home.icon
-        | 首頁
+        span.fat-only 首頁
       router-link.item(to="/cards" exact='')
-        i.users.icon
-        | 食譜
+        i.book.icon
+        span.fat-only 食譜
       router-link.item(to="/thoughts" exact='')
         i.comments.icon
-        | 想法
+        span.fat-only 想法
       router-link.item(to="/baby" exact='')
         i.user.icon
-        | 嬰幼兒
+        span.fat-only 嬰幼兒
         span.fat-only 食譜
       router-link.item(to="/outer" exact='')
         i.sign.language.icon
-        | 資源
+        span.fat-only 資源
     #main
       router-view(:foods = "foods", :babyfoods = "babyfoods")
 </template>
