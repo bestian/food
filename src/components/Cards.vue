@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Cards',
   props: ['foods'],
   data () {
     return {

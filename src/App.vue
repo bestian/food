@@ -4,11 +4,21 @@
       router-link.item(to="/" exact='')
         i.home.icon
         | 首頁
+      router-link.item(to="/cards" exact='')
+        i.users.icon
+        | 食譜
       router-link.item(to="/thoughts" exact='')
         i.comments.icon
         | 想法
+      router-link.item(to="/baby" exact='')
+        i.user.icon
+        | 嬰幼兒
+        span.fat-only 食譜
+      router-link.item(to="/outer" exact='')
+        i.sign.language.icon
+        | 資源
     #main
-      router-view(:foods = "foods")
+      router-view(:foods = "foods", :babyfoods = "babyfoods")
 </template>
 
 <script>
@@ -21,7 +31,10 @@ export default {
         {t: '青木瓜、玉米、蓮藕雜煮', i: '青木瓜、玉米、蓮藕雜煮.jpg'},
         {t: '南瓜湯', i: '南瓜湯.jpg'},
         {t: '餅', i: '餅.jpg'},
-        {t: '南瓜義大利麵', '南瓜義大利麵.jpg'}
+        {t: '南瓜義大利麵', i: '南瓜義大利麵.jpg'}
+      ],
+      babyfoods: [
+        {t: '南瓜湯', i: '南瓜湯.jpg'}
       ]
     }
   }
@@ -35,6 +48,55 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.print-only {
+  visibility: hidden !important;
+  display: none !important;
+}
+
+@media print {
+  .no-print {
+    visibility: hidden !important;
+    display: none !important;
+    height: 0 !important;
+  }
+  .print-only {
+    visibility: visible !important;
+    display: block !important;
+  }
+  img, div, .card, .column {
+    page-break-inside: avoid !important;
+  }
+}
+
+a, button, .clickable {
+  cursor: pointer !important;
+}
+
+.ui.card {
+  box-shadow: grey 0px 1px 5px 1px;
+}
+
+@media screen and (max-width: 600px) {
+  .fat-only {
+    display: none !important;
+  }
+  .button {
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .fater-only {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .thin-only {
+    display: none !important;
+  }
 }
 
 .router-link-active {
