@@ -1,7 +1,7 @@
 <template lang="jade">
 .hello
   .ui.segment.container
-    p 因為愛吃所以自己煮：）
+    h1 因為愛吃所以自己煮：）
 </template>
 
 <script>

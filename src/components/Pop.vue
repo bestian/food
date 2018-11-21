@@ -58,4 +58,8 @@ p {
   text-align: left;
 }
 
+.ui.fluid.card {
+  background-color: white !important;
+}
+
 </style>
