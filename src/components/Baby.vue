@@ -6,7 +6,7 @@
       input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', autofocus='')
   hr
   .ui.animated.four.doubling.cards.container
-    .ui.card(v-for='(f, index) in babyfoods', v-bind:key='index', v-show='has(f, mySearch)')
+    a.ui.card(v-for='(f, index) in babyfoods', v-bind:key='index', v-show='has(f, mySearch)' @click = 'showPop = !showPop; pop = f')
       .image
         img(:src="'/static/images/' + f.i")
       .ui.header
@@ -15,16 +15,24 @@
         | 作法：
         ol.ui.ordered.list
           li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
+  a(@click = "showPop = !showPop")
+    pop(:pop = "pop", v-show="showPop")
 </template>
 
 <script>
+
+import Pop from './Pop.vue'
+
 export default {
   name: 'Baby',
   props: ['babyfoods'],
+  components: { Pop },
   data () {
     return {
       msg: '自然美食DIY',
-      mySearch: ''
+      mySearch: '',
+      showPop: false,
+      pop: ''
     }
   },
   methods: {
