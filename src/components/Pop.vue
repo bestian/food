@@ -2,15 +2,16 @@
 .hello
   #pop
     .back
-    .ui.fluid.card
-      .image
-        img(:src="'/static/images/' + pop.i")
-      .ui.header
-        | {{pop.t}}
-      .description(v-if='pop.p')
-        | 作法：
-        ol.ui.ordered.list
-          li.item(v-for='(p, idx) in pop.p', v-bind:key='idx') {{ p }}
+    .ui.container
+      .ui.fluid.card
+        .image
+          img(:src="'/static/images/' + pop.i")
+        .ui.header
+          | {{pop.t}}
+        .description(v-if='pop.p')
+          | 作法：
+          ol.ui.ordered.list
+            li.item(v-for='(p, idx) in pop.p', v-bind:key='idx') {{ p }}
 </template>
 
 <script>
