@@ -10,6 +10,7 @@
           | {{pop.t}}
         .description(v-if='pop.p')
           | 作法：
+          hr
           ol.ui.ordered.list
             li.item(v-for='(p, idx) in pop.p', v-bind:key='idx') {{ p }}
 </template>

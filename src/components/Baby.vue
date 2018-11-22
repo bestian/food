@@ -13,6 +13,7 @@
         | {{f.t}}
       .description(v-if='f.p')
         | 作法：
+        hr
         ol.ui.ordered.list
           li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
   a(@click = "showPop = !showPop")
