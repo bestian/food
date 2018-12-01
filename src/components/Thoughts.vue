@@ -1,6 +1,7 @@
 <template lang="jade">
 .hello
   .ui.segment.container
+    img(src="/static/img/hsyinyi.jpg")
     p 如果真的要說有什麼特別，我會比較注意飲食裡除了米飯和麵粉，也要有其他五穀雜糧，有時以其他澱粉當主食，例如其中一兩餐不是吃飯／麵，而是吃小米、芋頭、南瓜、地瓜、山藥直接當主食等。
 
     p 例如前幾天的早餐是催芽綠豆與糙薏仁，加點南瓜、椰棗調味的清爽甜湯。
@@ -13,6 +14,7 @@
 
     p 我的經驗是，均衡的雜糧蔬食、不過度調味，比在意有沒有吃到肉啊蛋啊來得重要。^_^
   .ui.segment.container
+    img(src="/static/img/hsyinyi.jpg")
     p 我當初覺得
     p 在醫院生產後，胎盤大多當廢棄物被處理掉吧
     p 居家生，把胎盤當垃圾丟棄或放廚餘桶...感受上都怪怪的
@@ -66,4 +68,11 @@ p {
   line-height: 1.6;
   text-align: left;
 }
+
+img {
+  float: left;
+  border-radius: 50%;
+  margin: 10px 10px;
+}
+
 </style>

@@ -1,7 +1,7 @@
 <template lang="jade">
 .hello
   h1 {{ msg }}
-  cards(:foods = "babyfoods")
+  cards(:foods = "foods")
 </template>
 
 <script>
@@ -9,20 +9,12 @@
 import Cards from './Cards.vue'
 
 export default {
-  name: 'Baby',
+  name: 'Foods',
   props: ['foods'],
   components: { Cards },
   data () {
     return {
-      msg: '嬰幼兒自然美食DIY',
-      mySearch: '',
-      showPop: false,
-      pop: ''
-    }
-  },
-  computed: {
-    babyfoods: function () {
-      return this.foods.filter(function (f) { return f.b })
+      msg: '自然美食DIY'
     }
   },
   methods: {

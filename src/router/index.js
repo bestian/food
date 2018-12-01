@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Intro from '@/components/Intro'
-import Cards from '@/components/Cards'
+import Foods from '@/components/Foods'
 import Thoughts from '@/components/Thoughts'
 import Baby from '@/components/Baby'
 import Outer from '@/components/Outer'
@@ -16,9 +16,9 @@ export default new Router({
       component: Intro
     },
     {
-      path: '/cards',
-      name: 'Cards',
-      component: Cards
+      path: '/foods',
+      name: 'Foods',
+      component: Foods
     },
     {
       path: '/thoughts',

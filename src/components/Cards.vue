@@ -1,13 +1,12 @@
-<template lang = jade>
+<template lang="jade">
 .hello
-  h1 {{ msg }}
   .ui.from.container
     .ui.search
       input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', autofocus='')
   hr
   .ui.animated.four.doubling.cards.container
-    a.ui.card(v-for='(f, index) in foods', v-bind:key='index', v-show='has(f, mySearch)' @click = 'showPop = !showPop; pop = f')
-      .image
+    .ui.card(v-for='(f, index) in foods', v-bind:key='index', v-show='has(f, mySearch)')
+      a.image(@click = 'showPop = !showPop; pop = f')
         img(:src="'/static/images/' + f.i")
       .ui.header
         | {{f.t}}
@@ -17,7 +16,8 @@
         ol.ui.ordered.list
           li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
   a(@click = "showPop = !showPop")
-    pop(:pop = "pop", v-show="showPop")
+    transition(name="fade")
+      pop(:pop = "pop", v-show="showPop")
 </template>
 
 <script>
@@ -56,4 +56,12 @@ export default {
   top: -2px;
   transition: all 0.3s ease;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: all .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 </style>

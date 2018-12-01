@@ -4,7 +4,7 @@
       router-link.item(to="/" exact='')
         i.home.icon
         span.fat-only 首頁
-      router-link.item(to="/cards" exact='')
+      router-link.item(to="/foods" exact='')
         i.book.icon
         span.fat-only 食譜
       router-link.item(to="/thoughts" exact='')
@@ -17,8 +17,11 @@
       router-link.item(to="/outer" exact='')
         i.sign.language.icon
         span.fat-only 資源
+      .right.menu.fat-only
+        .item
+          iframe(src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ffood.bestian.tw&layout=button_count&size=small&mobile_iframe=true&appId=485195848253155&width=63&height=20" width="63" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
     #main
-      router-view(:foods = "foods", :babyfoods = "babyfoods")
+      router-view(:foods = "foods")
 </template>
 
 <script>
@@ -41,7 +44,7 @@ export default {
           p: [
             '青木瓜、玉米、蓮藕切丁',
             '把它們煮在一起']},
-        {t: '南瓜湯', i: '南瓜湯.jpg'},
+        {t: '南瓜湯', b: true, i: '南瓜湯.jpg'},
         {
           t: '米糠茴香煎餅',
           i: '米糠茴香煎餅.jpg',
@@ -50,13 +53,42 @@ export default {
             '米糠與麵粉大約1:2，似乎再多一點也OK',
             '不用任何調味，細細咀嚼，有微甜，很好吃']},
         {t: '餅', i: '餅.jpg'},
+        {t: '味增蔬菜烏龍麵', i: '味增蔬菜烏龍麵.jpg', p: ['加了台灣藜、少許芋頭、海苔。', '味噌和芋頭很搭配。']},
         {t: '南瓜義大利麵', i: '南瓜義大利麵.jpg'},
         {t: '紅豆地瓜麻糬', i: '紅豆地瓜麻糬.jpg'},
-        {t: '米糕', i: '米糕.jpg'}
+        {t: '米糕', b: true, i: '米糕.jpg'},
+        {t: '紅藜薑黃蘿糕',
+          i: '紅藜薑黃蘿糕.jpg',
+          b: true,
+          p: ['蘿蔔糕加了在來米、梗米、地瓜粉',
+            '（在來米1.5碗、梗米0.5碗、地瓜粉大約半碗吧，每種都是隨興加的）',
+            '口感Q嫩，非常像早餐店那種軟軟的蘿蔔糕，下次要用這個配方做芋頭粿～']},
+        {t: '紅豆年糕',
+          i: '紅豆年糕.jpg',
+          b: true,
+          p: ['這次是加糯米、梗米、台灣紅藜、地瓜粉',
+            '紅豆有先催芽',
+            '順手加入乾燥牛蒡煮的水、黑糖',
+            '蒸熟後，融合在一起的味道很棒',
+            '外面賣的年糕都太甜了！',
+            '自製年糕／麻糬真的又快又好吃喲，經濟實惠^_^']}
       ],
       babyfoods: [
         {t: '南瓜湯', i: '南瓜湯.jpg'},
-        {t: '米糕', i: '米糕.jpg'}
+        {t: '米糕', i: '米糕.jpg'},
+        {t: '紅藜薑黃蘿糕',
+          i: '紅藜薑黃蘿糕.jpg',
+          p: ['蘿蔔糕加了在來米、梗米、地瓜粉',
+            '（在來米1.5碗、梗米0.5碗、地瓜粉大約半碗吧，每種都是隨興加的）',
+            '口感Q嫩，非常像早餐店那種軟軟的蘿蔔糕，下次要用這個配方做芋頭粿～']},
+        {t: '紅豆年糕',
+          i: '紅豆年糕.jpg',
+          p: ['這次是加糯米、梗米、台灣紅藜、地瓜粉',
+            '紅豆有先催芽',
+            '順手加入乾燥牛蒡煮的水、黑糖',
+            '蒸熟後，融合在一起的味道很棒',
+            '外面賣的年糕都太甜了！',
+            '自製年糕／麻糬真的又快又好吃喲，經濟實惠^_^']}
       ]
     }
   }
