@@ -4,7 +4,7 @@
     h1 因為愛吃所以自己煮：）
     router-link(to="/foods")
       transition-group(name="list", tag="p")
-        .ui(v-for="(f, idx) in foods" v-bind:key="idx", v-if="myIndex % foods.length == idx")
+        .ui(v-for="(f, idx) in foods" v-bind:key="idx", v-show="myIndex % foods.length == idx")
           img(:src = "'/static/images/' + f.i")
           h3 {{f.t}}
 </template>
