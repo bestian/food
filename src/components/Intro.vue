@@ -39,25 +39,28 @@ p {
 }
 
 img {
-  width: 50vw;
-  height: 50vh;
+  width: 50vmin;
+  height: 36vmin;
   border-radius: 15px;
 }
 
 @media screen and (max-width: 600px) {
   img {
-    width: 85vw;
+  width: 80vmin;
+  height: 50vmin;
   }
 }
 
 .list-item {
 }
+
 .list-enter-active {
   transition: all 1s cubic-bezier(.4,-0.38,.71,1.61);
 }
+
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-  opacity: 0.5;
-  transform: scale(0.8);
+  opacity: 0;
+  transform: scale(0.5);
 }
 
 </style>
