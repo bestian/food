@@ -9,7 +9,7 @@
         span.fat-only 食譜
       router-link.item(to="/thoughts" exact='')
         i.comments.icon
-        span.fat-only 想法
+        span.fat-only 飲食小記
       router-link.item(to="/baby" exact='')
         i.user.icon
         span.fat-only 嬰幼兒
@@ -19,7 +19,7 @@
         span.fat-only 資源
       .right.menu.fat-only
         .item
-          iframe(src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ffood.bestian.tw&layout=button_count&size=small&mobile_iframe=true&appId=485195848253155&width=63&height=20" width="63" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
+          iframe(src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ffood.bestian.tw&layout=button&size=small&mobile_iframe=true&appId=485195848253155&width=63&height=20" width="63" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
     #main
       router-view(:foods = "foods")
 </template>
@@ -44,7 +44,10 @@ export default {
           p: [
             '青木瓜、玉米、蓮藕切丁',
             '把它們煮在一起']},
-        {t: '南瓜湯', b: true, i: '南瓜湯.jpg',
+        {
+          t: '南瓜湯',
+          b: true,
+          i: '南瓜湯.jpg',
           p: [
             '南瓜切丁',
             '煮熟']},

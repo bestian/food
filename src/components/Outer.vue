@@ -35,7 +35,7 @@ export default {
   data () {
     return {
       books: [
-        {t: '幸福市集：種的安心、吃的放心', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014110585324&actid=www.google.com.tw'},
+        {t: '幸福市集：種的安心、吃的放心', h: 'https://www.books.com.tw/products/0010577238'},
         {t: '我的幸福農莊', h: 'https://www.kingstone.com.tw/book/book_page.asp?kmcode=2011920480498'},
         {t: '這樣吃，就不需要看醫生：醫院不會告訴你的正確飲食方法', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014110690912&lid=search&actid=wise'},
         {t: '一菜一湯的健康奇蹟：吃出驚人自癒力！', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014110672222&lid=search&actid=wise'},
