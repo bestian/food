@@ -10,7 +10,7 @@
         img(:src="'/static/images/' + f.i")
       .ui.header
         | {{f.t}}
-      .description(v-if='f.p')
+      .description(v-if='f.p && false')
         | 作法：
         hr
         ol.ui.ordered.list

@@ -3,7 +3,7 @@
   #pop
     .back
     .ui.container
-      .ui.fluid.card
+      .ui.centered.card
         .image
           img(:src="'/static/images/' + pop.i")
         .ui.header
@@ -11,7 +11,7 @@
         .description(v-if='pop.p')
           | 作法：
           hr
-          ol.ui.ordered.list
+          ol.ui.bulleted.list
             li.item(v-for='(p, idx) in pop.p', v-bind:key='idx') {{ p }}
 </template>
 
@@ -51,7 +51,7 @@ export default {
   height: 100vh;
   width: 100vw;
   background-color: white;
-  opacity: 0.6;
+  opacity: 0.86;
 }
 
 p {
@@ -60,8 +60,9 @@ p {
   text-align: left;
 }
 
-.ui.fluid.card {
+.ui.card {
   background-color: white !important;
+  padding: 3em 1em;
 }
 
 </style>
