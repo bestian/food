@@ -63,6 +63,15 @@ p {
 .ui.card {
   background-color: white !important;
   padding: 3em 1em;
+  width: 50vmin;
+}
+
+.ui.header {
+  font-size: 2em;
+}
+
+.description {
+  font-size: 1.5em;
 }
 
 </style>

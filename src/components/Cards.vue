@@ -5,8 +5,9 @@
       input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', autofocus='')
   hr
   .ui.animated.four.doubling.cards.container
-    .ui.card(v-for='(f, index) in foods', v-bind:key='index', v-show='has(f, mySearch)')
-      a.image(@click = 'showPop = !showPop; pop = f')
+    a.ui.card(v-for='(f, index) in foods', v-bind:key='index', v-show='has(f, mySearch)',
+    @click = 'showPop = !showPop; pop = f')
+      .image
         img(:src="'/static/images/' + f.i")
       .ui.header
         | {{f.t}}
@@ -47,6 +48,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.card .header {
+  white-space: pre-line;
+}
 
 .animated .card {
   position: relative;
