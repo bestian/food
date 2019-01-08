@@ -36,15 +36,15 @@ export default {
     return {
       books: [
         {t: '幸福市集：種的安心、吃的放心', h: 'https://www.books.com.tw/products/0010577238'},
-        {t: '我的幸福農莊', h: 'https://www.kingstone.com.tw/book/book_page.asp?kmcode=2011920480498'},
-        {t: '這樣吃，就不需要看醫生：醫院不會告訴你的正確飲食方法', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014110690912&lid=search&actid=wise'},
-        {t: '一菜一湯的健康奇蹟：吃出驚人自癒力！', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014110672222&lid=search&actid=wise'},
-        {t: '玄米不思議：生機、美味、一身輕', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014270619846&lid=search&actid=wise'},
-        {t: '新谷醫師的餐桌：不生病的幸福飲食', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014110421363&lid=search&actid=wise'},
-        {t: '艾拉的奇蹟廚房 ： 告別過敏、慢性病，增強免疫力的無麩質蔬食料理', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014110715257&lid=search&actid=wise'},
-        {t: '發現粗食好味道', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014110491502&lid=search&actid=wise'},
-        {t: '發現粗食好味道２：塘塘與早乙女修夫婦傳授108道「穀物蔬食」樂活飲食', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014110695122&lid=search&actid=wise'},
-        {t: '自然好食小廚房：品嘗全食料理，吃進穀豆菜果籽的陽光活力', h: 'https://www.kingstone.com.tw/basics/basics.asp?kmcode=2014271178649&lid=search&actid=wise'}
+        {t: '我的幸福農莊', h: 'https://www.books.com.tw/products/0010563577'},
+        {t: '這樣吃，就不需要看醫生：醫院不會告訴你的正確飲食方法', h: 'https://www.books.com.tw/products/0010670374'},
+        {t: '一菜一湯的健康奇蹟：吃出驚人自癒力！', h: 'https://www.books.com.tw/products/0010656928'},
+        {t: '玄米不思議：生機、美味、一身輕', h: 'https://www.books.com.tw/products/0010342906'},
+        {t: '新谷醫師的餐桌：不生病的幸福飲食', h: 'https://www.books.com.tw/products/0010383951'},
+        {t: '艾拉的奇蹟廚房 ： 告別過敏、慢性病，增強免疫力的無麩質蔬食料理', h: 'https://www.books.com.tw/products/0010695721'},
+        {t: '發現粗食好味道', h: 'https://www.books.com.tw/products/0010585698'},
+        {t: '發現粗食好味道２：塘塘與早乙女修夫婦傳授108道「穀物蔬食」樂活飲食', h: 'https://www.books.com.tw/products/0010674121'},
+        {t: '自然好食小廚房：品嘗全食料理，吃進穀豆菜果籽的陽光活力', h: 'https://www.books.com.tw/products/0010690440'}
       ],
       sites: [
         {t: '上下游', h: 'https://www.newsmarket.com.tw/'},
