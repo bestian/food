@@ -9,6 +9,7 @@
     @click = 'showPop = !showPop; pop = f')
       .image
         img(:src="'/static/images/' + f.i")
+      .filler
       .ui.header
         | {{f.t}}
       .description(v-if='f.p && false')
@@ -49,8 +50,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+.filler {
+  flex-grow: 10
+}
+
 .card .header {
   white-space: pre-line;
+  padding: 1em;
 }
 
 .animated .card {

@@ -68,6 +68,7 @@ p {
 
 .ui.header {
   font-size: 2em;
+  white-space: pre-line;
 }
 
 .description {
