@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import autofocus from 'vue-autofocus-directive'
+
+Vue.directive('autofocus', autofocus)
 
 Vue.config.productionTip = false
 

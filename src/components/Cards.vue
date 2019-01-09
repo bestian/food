@@ -2,7 +2,7 @@
 .hello
   .ui.from.container
     .ui.search
-      input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', autofocus='')
+      input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', v-autofocus)
   hr
   .ui.animated.four.doubling.cards.container
     a.ui.card(v-for='(f, index) in foods', v-bind:key='index', v-show='has(f, mySearch)',
