@@ -13,7 +13,7 @@
       .ui.header
         | {{f.t}}
       .description(v-if='f.p && false')
-        | 作法：
+        | 說明：
         hr
         ol.ui.ordered.list
           li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}

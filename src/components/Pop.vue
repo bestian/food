@@ -9,7 +9,7 @@
         .ui.header
           | {{pop.t}}
         .description(v-if='pop.p')
-          | 作法：
+          | 說明：
           hr
           ol.ui.bulleted.list
             li.item(v-for='(p, idx) in pop.p', v-bind:key='idx') {{ p }}
