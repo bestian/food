@@ -63,7 +63,9 @@ p {
 .ui.card {
   background-color: white !important;
   padding: 3em 1em;
-  width: 50vmin;
+  width: 75vmin;
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 
 .ui.header {
