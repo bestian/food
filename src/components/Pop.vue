@@ -8,7 +8,7 @@
           img(:src="'/static/images/' + pop.i")
         .ui.header
           | {{pop.t}}
-        .description(v-if='pop.p')
+        .description(v-if='pop.p', v-bind:class = "{ 'long' : pop.p.length > 2 || pop.p[0].length > 30}")
           | 說明：
           hr
           ol.ui.bulleted.list
@@ -77,4 +77,7 @@ p {
   font-size: 1.5em;
 }
 
+.long {
+ font-size: 1em;
+}
 </style>
