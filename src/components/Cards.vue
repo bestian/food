@@ -2,16 +2,18 @@
 .hello
   .ui.from.container
     .ui.search
-      input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', autofocus='')
+      input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', v-autofocus)
   hr
   .ui.animated.four.doubling.cards.container
-    .ui.card(v-for='(f, index) in foods', v-bind:key='index', v-show='has(f, mySearch)')
-      a.image(@click = 'showPop = !showPop; pop = f')
+    a.ui.card(v-for='(f, index) in foods', v-bind:key='index', v-show='has(f, mySearch)',
+    @click = 'showPop = !showPop; pop = f')
+      .image
         img(:src="'/static/images/' + f.i")
+      .filler
       .ui.header
         | {{f.t}}
-      .description(v-if='f.p')
-        | 作法：
+      .description(v-if='f.p && false')
+        | 說明：
         hr
         ol.ui.ordered.list
           li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
@@ -47,6 +49,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.filler {
+  flex-grow: 10
+}
+
+.card .header {
+  white-space: pre-line;
+  padding: 1em;
+}
 
 .animated .card {
   position: relative;

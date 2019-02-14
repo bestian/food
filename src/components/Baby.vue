@@ -1,7 +1,13 @@
 <template lang="jade">
 .hello
   h1 {{ msg }}
-  cards(:foods = "babyfoods")
+  h3 我的孩子從小就跟著大人吃
+  h3 網站上的食譜
+  h3 就是我們家的家常料理紀錄
+  h3 這區簡單列一些2歲前嬰兒沒長牙～長牙的副食品
+  h3 幼兒飲食，請直接參考
+    router-link.item(to="/foods" exact='') 食譜區
+  //cards(:foods = "babyfoods")
 </template>
 
 <script>
