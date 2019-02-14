@@ -9,11 +9,7 @@
     h3 祝大家食在自然
     router-link(to="/foods")
       transition-group(name="list", tag="p")
-<<<<<<< HEAD
-        .ui(v-for="(f, idx) in foods" v-bind:key="idx", v-show="myIndex % foods.length == idx")
-=======
         .ui(v-for="(f, idx) in foods", v-bind:key = "f.t", v-if="myIndex % foods.length == idx")
->>>>>>> c3bf2d620dc6e7e0975712cc27a1f2bb28b60ea5
           img(:src = "'/static/images/' + f.i")
           h3 {{f.t}}
 </template>
