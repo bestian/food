@@ -4,8 +4,8 @@
     .ui.search
       input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', v-autofocus)
   hr
-  .ui.animated.four.doubling.cards.container
-    a.ui.card(v-for='(f, index) in foods', v-bind:key='index', v-show='has(f, mySearch)',
+  .ui.animated.four.doubling.cards.container(v-infinite-scroll="loadMore", infinite-scroll-distance="10")
+    a.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     @click = 'showPop = !showPop; pop = f')
       .image
         img(:src="'/static/images/' + f.i")
@@ -35,13 +35,17 @@ export default {
       msg: '自然美食DIY',
       mySearch: '',
       showPop: false,
-      pop: ''
+      pop: '',
+      n: 20
     }
   },
   methods: {
     has: function (j, k) {
       if (!k) return true
       return JSON.stringify(j).indexOf(k) > -1
+    },
+    loadMore: function () {
+      this.n += 20
     }
   }
 }

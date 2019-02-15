@@ -4,8 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import autofocus from 'vue-autofocus-directive'
+import infiniteScroll from 'vue-infinite-scroll'
 
 Vue.directive('autofocus', autofocus)
+
+Vue.use(infiniteScroll)
 
 Vue.config.productionTip = false
 
