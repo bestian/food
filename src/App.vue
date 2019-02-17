@@ -2,21 +2,22 @@
   #app
     .ui.menu
       router-link.item(to="/" exact='')
-        i.home.icon
-        span.fat-only 首頁
+        i.fat-only.home.icon
+        span 首頁
       router-link.item(to="/foods" exact='')
-        i.book.icon
-        span.fat-only 食譜
+        i.fat-only.book.icon
+        span 食譜
       router-link.item(to="/thoughts" exact='')
-        i.comments.icon
-        span.fat-only 飲食小記
-      router-link.item(to="/baby" exact='')
+        i.fat-only.comments.icon
+        span.fat-only 飲食
+        span 小記
+      router-link.item.fat-only(to="/baby" exact='')
         i.user.icon
-        span.fat-only 嬰幼兒
-        span.fat-only 食譜
+        span 嬰幼兒
+        span 食譜
       router-link.item(to="/outer" exact='')
-        i.sign.language.icon
-        span.fat-only 資源
+        i.fat-only.sign.language.icon
+        span 資源
       .right.menu.fat-only
         .item
           iframe(src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ffood.bestian.tw&layout=button&size=small&mobile_iframe=true&appId=485195848253155&width=63&height=20" width="63" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
