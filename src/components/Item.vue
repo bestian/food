@@ -1,7 +1,7 @@
 <template lang="jade">
 .hello
   h1 {{ msg }}
-  cards(:foods = "foods", :showPop = "false")
+  cards(:foods = "foods", :showPop="true")
 </template>
 
 <script>

@@ -18,12 +18,15 @@
 <script>
 export default {
   name: 'Pop',
-  props: ['pop'],
+  props: ['pop', 'foods'],
   data () {
     return {
     }
   },
   methods: {
+  },
+  mounted () {
+    this.pop = this.foods[this.$route.params.id]
   }
 }
 </script>

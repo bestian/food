@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Intro from '@/components/Intro'
 import Foods from '@/components/Foods'
+import Item from '@/components/Item'
 import Thoughts from '@/components/Thoughts'
 import Baby from '@/components/Baby'
 import Outer from '@/components/Outer'
@@ -19,6 +20,11 @@ export default new Router({
       path: '/foods',
       name: 'Foods',
       component: Foods
+    },
+    {
+      path: '/item/:id',
+      name: 'item',
+      component: Item
     },
     {
       path: '/thoughts',

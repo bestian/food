@@ -5,8 +5,8 @@
       input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', v-autofocus)
   hr
   .ui.animated.four.doubling.cards.container(v-infinite-scroll="loadMore", infinite-scroll-distance="10")
-    a.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
-    @click = 'showPop = !showPop; pop = f')
+    router-link.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
+    :to = "'/item/' + index")
       .image
         img(:src="'/static/images/' + f.i")
       .filler
@@ -17,9 +17,9 @@
         hr
         ol.ui.ordered.list
           li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
-  a(@click = "showPop = !showPop")
+  router-link(to = "/foods")
     transition(name="fade")
-      pop(:pop = "pop", v-show="showPop")
+      pop(:pop = "pop", :foods = "foods", v-show="showPop")
 </template>
 
 <script>
@@ -28,13 +28,12 @@ import Pop from './Pop.vue'
 
 export default {
   name: 'Cards',
-  props: ['foods'],
+  props: ['foods', 'showPop'],
   components: { Pop },
   data () {
     return {
       msg: '自然美食DIY',
       mySearch: '',
-      showPop: false,
       pop: '',
       n: 20
     }
