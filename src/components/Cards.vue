@@ -2,7 +2,7 @@
 .hello
   .ui.from.container
     .ui.search
-      input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', v-autofocus)
+      input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', v-autofocus, @input = "n += 10")
   hr
   .ui.animated.four.doubling.cards.container(v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
