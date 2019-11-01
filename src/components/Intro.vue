@@ -1,13 +1,12 @@
 <template lang="jade">
 .hello
   .ui.piled.segment.container
-    h1 Hi我是Hsinyi
-    h3 因為愛吃所以自己煮：）
-    h3 將大學畢業後，一路過來的煮食作個整理記錄與大家共享
-    h3 這網站『蔬食比例較多』，沒有特別標素不素
-    h3 料理靈感來自於大地與前人的智慧
-    h3 飲食區打食材關鍵字（如：紅豆）可以找到相關的料理
-    h3 祝大家食在自然
+    h1 這個平台用來存放個人（Hsinyi）的煮食紀錄，
+    h3 總數上，蔬食比例較多，沒有特別標素不素，
+    h3 料理靈感來自大地與許多人分享的經驗與智慧，
+    h3 也有自己突然想到的，例如完全沒有素料的素茶碗蒸、素肉羹等等。
+    h3 飲食區打食材關鍵字（如：紅豆）可以找到相關的料理，
+    h3 祝大家食在喜悅、自然~
     router-link(to="/foods")
       transition-group(name="list", tag="p")
         .ui(v-for="(f, idx) in foods", v-bind:key = "f.t", v-if="myIndex % foods.length == idx")
