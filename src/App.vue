@@ -11,7 +11,7 @@
         i.fat-only.comments.icon
         span.fat-only 飲食
         span 小記
-      router-link.item.fat-only(to="/baby" exact='')
+      //router-link.item.fat-only(to="/baby" exact='')
         i.user.icon
         span 嬰幼兒
         span 食譜
