@@ -18,6 +18,7 @@
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "vue": "^2.5.2",
+    "vue-analytics": "^5.17.2",
     "vue-autofocus-directive": "0.0.5",
     "vue-infinite-scroll": "^2.0.2",
     "vue-router": "^3.0.1"
