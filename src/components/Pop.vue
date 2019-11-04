@@ -18,9 +18,10 @@
 <script>
 export default {
   name: 'Pop',
-  props: ['pop', 'foods'],
+  props: ['foods'],
   data () {
     return {
+      pop: {}
     }
   },
   methods: {

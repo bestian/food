@@ -1,7 +1,22 @@
 <template lang="jade">
 .hello
   h1 {{ msg }}
-  cards(:foods = "foods", :showPop = "false")
+  .ui.form.container
+    .inline.fields
+      label 檢視模式
+      .field
+        .ui.radio.checkbox
+          input(type="radio", name="mode", value="image", v-model="mode")
+          label 大圖示
+      .field
+        .ui.radio.checkbox
+          input(type="radio", name="mode", value="avatar", v-model="mode")
+          label 小圖示
+      .field
+        .ui.radio.checkbox
+          input(type="radio", name="mode", value="list", v-model="mode")
+          label 文字
+  cards(:foods = "foods", :showPop = "false", :mode = "mode")
 </template>
 
 <script>
@@ -14,6 +29,7 @@ export default {
   components: { Cards },
   data () {
     return {
+      mode: 'image',
       msg: '自然美食DIY'
     }
   },

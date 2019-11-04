@@ -4,10 +4,39 @@
     .ui.search
       input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', v-autofocus, @input = "n += 10")
   hr
-  .ui.animated.four.doubling.cards.container(v-infinite-scroll="loadMore", infinite-scroll-distance="10")
+  .ui.animated.four.doubling.cards.container(
+  v-show = "mode == 'image'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     :to = "'/item/' + index")
       .image
+        img(:src="'/static/images/' + f.i")
+      .filler
+      .ui.header
+        | {{f.t}}
+      .description(v-if='f.p && false')
+        | 說明：
+        hr
+        ol.ui.ordered.list
+          li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
+  .ui.animated.eight.doubling.cards.container(
+  v-show = "mode == 'avatar'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
+    router-link.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
+    :to = "'/item/' + index")
+      .image
+        img(:src="'/static/images/' + f.i")
+      .filler
+      .ui.header
+        | {{f.t}}
+      .description(v-if='f.p && false')
+        | 說明：
+        hr
+        ol.ui.ordered.list
+          li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
+  .ui.animated.horizontal.divided.left.aligned.list.container(
+  v-show = "mode == 'list'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
+    router-link.item(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
+    :to = "'/item/' + index")
+      .image.ui.avatar
         img(:src="'/static/images/' + f.i")
       .filler
       .ui.header
@@ -28,7 +57,7 @@ import Pop from './Pop.vue'
 
 export default {
   name: 'Cards',
-  props: ['foods', 'showPop'],
+  props: ['foods', 'showPop', 'mode'],
   components: { Pop },
   data () {
     return {
@@ -62,11 +91,20 @@ export default {
   padding: 1em;
 }
 
-.animated .card {
+.animated .card{
   position: relative;
   top: 0;
 }
 .animated .card:hover {
+  top: -2px;
+  transition: all 0.3s ease;
+}
+
+.animated .item{
+  position: relative;
+  top: 0;
+}
+.animated .item:hover {
   top: -2px;
   transition: all 0.3s ease;
 }
@@ -76,6 +114,11 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+.horizontal.list .item {
+  width: 15vw;
+  height: 15vh;
 }
 
 </style>
