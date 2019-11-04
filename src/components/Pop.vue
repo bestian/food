@@ -4,6 +4,8 @@
     .back
     .ui.container
       .ui.centered.card
+        .item
+          iframe(:src="'https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ffood.bestian.tw%2F#%2Fitem%2F'+ $route.params.id + '&layout=button&size=small&mobile_iframe=true&appId=485195848253155&width=63&height=20'" width="63" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
         .image
           img(:src="'/static/images/' + pop.i")
         .ui.header

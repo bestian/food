@@ -48,7 +48,7 @@
           li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
   router-link(to = "/foods")
     transition(name="fade")
-      pop(:pop = "pop", :foods = "foods", v-show="showPop")
+      pop(:foods = "foods", v-show="showPop")
 </template>
 
 <script>
@@ -63,7 +63,6 @@ export default {
     return {
       msg: '自然美食DIY',
       mySearch: '',
-      pop: '',
       n: 20
     }
   },

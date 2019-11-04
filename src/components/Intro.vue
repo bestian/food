@@ -1,12 +1,13 @@
 <template lang="jade">
 .hello
   .ui.piled.segment.container
-    h1 這個平台用來存放個人（Hsinyi）的煮食紀錄，
+    h1 關於平台
+    h3 這裡用來存放個人（Hsinyi）的煮食紀錄，
     h3 總數上，蔬食比例較多，沒有特別標素不素，
     h3 料理靈感來自大地、靈感乍現，以及許多人分享的經驗與智慧。
     h3 飲食區打食材關鍵字（如：紅豆）可以找到相關的料理，
     h3 祝大家食在喜悅、自然~
-    router-link(to="/foods")
+    router-link(to="/item/93")
       transition-group(name="list", tag="p")
         .ui(v-for="(f, idx) in foods", v-bind:key = "f.t", v-if="myIndex % foods.length == idx")
           img(:src = "'/static/images/' + f.i")
@@ -19,7 +20,7 @@ export default {
   props: ['foods'],
   data () {
     return {
-      myIndex: 1
+      myIndex: 93
     }
   },
   methods: {
