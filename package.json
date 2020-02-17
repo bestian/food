@@ -20,8 +20,10 @@
     "vue": "^2.5.2",
     "vue-analytics": "^5.17.2",
     "vue-autofocus-directive": "0.0.5",
+    "vue-gallery-slideshow": "^1.5.0",
     "vue-infinite-scroll": "^2.0.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-runtime-helpers": "^1.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
