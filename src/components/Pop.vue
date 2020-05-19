@@ -1,10 +1,10 @@
 <template lang="jade">
 .hello
   #pop
-    .back
+    router-link.back(to="/foods")
     .ui.container
       .ui.centered.card
-        .big.image
+        router-link.big.image(to="/foods")
           .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
         .ui.header
           | {{pop.t}}

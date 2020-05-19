@@ -46,9 +46,8 @@
         hr
         ol.ui.ordered.list
           li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
-  router-link(to = "/foods")
-    transition(name="fade")
-      pop(:foods = "foods", v-show="showPop")
+  transition(name="fade")
+    pop(:foods = "foods", v-show="showPop")
 </template>
 
 <script>
