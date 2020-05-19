@@ -29,7 +29,7 @@ export default {
   components: { Cards },
   data () {
     return {
-      mode: 'image',
+      mode: 'avatar',
       msg: '自然美食DIY'
     }
   },

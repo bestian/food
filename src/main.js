@@ -5,6 +5,16 @@ import App from './App'
 import router from './router'
 import autofocus from 'vue-autofocus-directive'
 import infiniteScroll from 'vue-infinite-scroll'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import VueSimpleMarkdown from 'vue-simple-markdown'
+
+// You need a specific loader for CSS files like https://github.com/webpack/css-loader
+// import 'vue-simple-markdown/dist/vue-simple-markdown.css'
+
+Vue.use(VueSimpleMarkdown)
+
+Vue.use(VueAxios, axios)
 
 Vue.directive('autofocus', autofocus)
 

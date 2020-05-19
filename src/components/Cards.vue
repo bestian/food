@@ -8,22 +8,22 @@
   v-show = "mode == 'image'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     :to = "'/item/' + index")
-      .image
-        img(:src="'/static/images/' + f.i")
-      .filler
+      .big.image
+        .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .ui.header
         | {{f.t}}
-      .description(v-if='f.p && false')
-        | 說明：
+      .description(v-if='f.p')
         hr
-        ol.ui.ordered.list
-          li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
+        .ui.list
+          .item(v-for='(p, idx) in f.p.slice(0,5)', v-bind:key='idx')
+            vue-simple-markdown(:source="p")
+        br
   .ui.animated.eight.doubling.cards.container(
   v-show = "mode == 'avatar'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     :to = "'/item/' + index")
-      .image
-        img(:src="'/static/images/' + f.i")
+      .small.image
+        .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .filler
       .ui.header
         | {{f.t}}
@@ -118,6 +118,25 @@ export default {
 .horizontal.list .item {
   width: 15vw;
   height: 15vh;
+}
+
+.description {
+  text-align: left;
+  padding: 0 1em;
+}
+
+.square {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.big.image .square {
+  height: 50vh;
+}
+
+.small.image .square {
+  height: 20vh;
 }
 
 </style>

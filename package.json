@@ -14,16 +14,20 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "babel-polyfill": "^6.26.0",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
+    "style-loader": "^1.2.1",
     "vue": "^2.5.2",
     "vue-analytics": "^5.17.2",
     "vue-autofocus-directive": "0.0.5",
+    "vue-axios": "^2.1.5",
     "vue-gallery-slideshow": "^1.5.0",
     "vue-infinite-scroll": "^2.0.2",
     "vue-router": "^3.0.1",
-    "vue-runtime-helpers": "^1.1.2"
+    "vue-runtime-helpers": "^1.1.2",
+    "vue-simple-markdown": "^1.1.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -44,7 +48,7 @@
     "chromedriver": "^2.27.2",
     "copy-webpack-plugin": "^4.0.1",
     "cross-spawn": "^5.0.1",
-    "css-loader": "^0.28.0",
+    "css-loader": "^0.28.11",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -54,7 +58,7 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
-    "extract-text-webpack-plugin": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",

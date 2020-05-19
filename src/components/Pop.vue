@@ -4,17 +4,15 @@
     .back
     .ui.container
       .ui.centered.card
-        .item
-          iframe(:src="'https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ffood.bestian.tw%2F#%2Fitem%2F'+ $route.params.id + '&layout=button&size=small&mobile_iframe=true&appId=485195848253155&width=63&height=20'" width="63" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
-        .image
-          img(:src="'/static/images/' + pop.i")
+        .big.image
+          .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
         .ui.header
           | {{pop.t}}
         .description(v-if='pop.p', v-bind:class = "{ 'long' : pop.p.length > 2 || pop.p[0].length > 30}")
-          | 說明：
           hr
-          ol.ui.bulleted.list
-            li.item(v-for='(p, idx) in pop.p', v-bind:key='idx') {{ p }}
+          .ui.list
+            .item(v-for='(p, idx) in pop.p', v-bind:key='idx')
+              vue-simple-markdown(:source="p")
 </template>
 
 <script>
@@ -30,6 +28,11 @@ export default {
   },
   mounted () {
     this.pop = this.foods[this.$route.params.id]
+  },
+  watch: {
+    foods (val) {
+      this.pop = this.foods[this.$route.params.id]
+    }
   }
 }
 </script>
@@ -80,10 +83,22 @@ p {
 }
 
 .description {
+  text-align: left;
+}
+
+.markdown-body {
   font-size: 1.5em;
 }
 
-.long {
+.long .markdown-body {
  font-size: 1em;
 }
+
+.image .square {
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+}
+
 </style>
