@@ -1,5 +1,6 @@
 <template lang="jade">
 .hello
+  vue-headful(:title="foods[$route.params.id].t + '@' + title")
   h1 {{ msg }}
   cards(:foods = "foods", :showPop="true")
 </template>
@@ -10,7 +11,7 @@ import Cards from './Cards.vue'
 
 export default {
   name: 'Foods',
-  props: ['foods'],
+  props: ['foods', 'title'],
   components: { Cards },
   data () {
     return {

@@ -1,5 +1,6 @@
 <template lang="jade">
 .hello
+  vue-headful(:title="'食譜-' + title")
   h1 {{ msg }}
   .ui.form.container
     .inline.fields
@@ -25,7 +26,7 @@ import Cards from './Cards.vue'
 
 export default {
   name: 'Foods',
-  props: ['foods'],
+  props: ['foods', 'title'],
   components: { Cards },
   data () {
     return {

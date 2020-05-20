@@ -21,7 +21,7 @@
         .item
           iframe(src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ffood.bestian.tw&layout=button_count&size=small&mobile_iframe=true&appId=485195848253155&width=100&height=20" width="100" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
     #main
-      router-view(:foods = "foods")
+      router-view(:foods = "foods", :title = "title")
 </template>
 
 <script>
@@ -29,7 +29,8 @@ export default {
   name: 'App',
   data () {
     return {
-      foods: []
+      foods: [],
+      title: '自然美食DIY'
     }
   },
   // computed: {

@@ -24,6 +24,7 @@
     "vue-autofocus-directive": "0.0.5",
     "vue-axios": "^2.1.5",
     "vue-gallery-slideshow": "^1.5.0",
+    "vue-headful": "^2.1.0",
     "vue-infinite-scroll": "^2.0.2",
     "vue-router": "^3.0.1",
     "vue-runtime-helpers": "^1.1.2",

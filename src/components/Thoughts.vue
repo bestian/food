@@ -1,5 +1,6 @@
 <template lang="jade">
 .hello
+  vue-headful(:title="'想法記錄-' + title")
   h1 這裡放一些對煮食、飲食的想法記錄
   .ui.piled.segment.container
     img(src="/static/img/hsyinyi.jpg")
@@ -66,6 +67,7 @@
 <script>
 export default {
   name: 'Thoughts',
+  props: ['title'],
   data () {
     return {
     }

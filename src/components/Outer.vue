@@ -1,5 +1,6 @@
 <template lang="jade">
 .hello
+  vue-headful(:title="'好站推薦-' + title")
   h1 推薦
   .ui.grid.container
     .ui.two.column.stackable.row
@@ -46,6 +47,7 @@
 <script>
 export default {
   name: 'Thoughts',
+  props: ['title'],
   data () {
     return {
       fb: [

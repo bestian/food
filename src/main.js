@@ -8,16 +8,16 @@ import infiniteScroll from 'vue-infinite-scroll'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueSimpleMarkdown from 'vue-simple-markdown'
+import vueHeadful from 'vue-headful'
+
+Vue.component('vue-headful', vueHeadful)
 
 // You need a specific loader for CSS files like https://github.com/webpack/css-loader
 // import 'vue-simple-markdown/dist/vue-simple-markdown.css'
 
 Vue.use(VueSimpleMarkdown)
-
 Vue.use(VueAxios, axios)
-
 Vue.directive('autofocus', autofocus)
-
 Vue.use(infiniteScroll)
 
 Vue.config.productionTip = false

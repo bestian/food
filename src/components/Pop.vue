@@ -73,7 +73,7 @@ p {
   background-color: white !important;
   padding: 3em 1em;
   width: 75vmin;
-  max-height: 100vh;
+  max-height: calc(100vh - 100px);
   overflow-y: scroll;
 }
 
@@ -96,7 +96,7 @@ p {
 
 .image .square {
   width: 100%;
-  height: 50vh;
+  height: 33vh;
   background-size: cover;
   background-position: center;
 }
