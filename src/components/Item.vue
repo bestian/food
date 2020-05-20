@@ -1,6 +1,6 @@
 <template lang="jade">
 .hello
-  vue-headful(:title="foods[$route.params.id].t + '@' + title")
+  vue-headful(:title="getTitle() + '@' + title")
   h1 {{ msg }}
   cards(:foods = "foods", :showPop="true")
 </template>
@@ -22,6 +22,13 @@ export default {
     has: function (j, k) {
       if (!k) return true
       return JSON.stringify(j).indexOf(k) > -1
+    },
+    getTitle: function () {
+      if (this.foods[this.$route.params.id]) {
+        return this.foods[this.$route.params.id].t
+      } else {
+        return '讀取中'
+      }
     }
   }
 }

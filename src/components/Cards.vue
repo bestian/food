@@ -2,7 +2,7 @@
 .hello
   .ui.from.container
     .ui.search
-      input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', v-autofocus, @input = "n += 10" list = "data")
+      input.prompt(v-model='mySearch', placeholder='以關鍵字搜詢', v-autofocus="", @input = "n += 10" list = "data")
       datalist#data
         option(v-for = "f in foods", :value = "f.t")
 

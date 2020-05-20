@@ -90,6 +90,7 @@ export default {
     },
     unbind: function () {
       var vm = this
+      clearInterval(this.interval)
       var elem = document.getElementsByClassName('vgs__container__img')[0]
       if (elem !== undefined) {
         elem.removeEventListener('click', vm.go)
@@ -104,11 +105,11 @@ export default {
       }
     }
   },
-  mounted () {
+  updated () {
+    this.unbind()
     this.interval = setInterval(this.bind, 500)
   },
   beforeUpdated () {
-    clearInterval(this.interval)
     this.unbind()
   }
 }

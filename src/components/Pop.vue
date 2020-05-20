@@ -3,11 +3,11 @@
   #pop
     router-link.back(to="/foods")
     .ui.container
-      .ui.centered.card
+      .ui.centered.card(v-if="pop.t")
         router-link.big.image(to="/foods")
           .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
         .ui.header
-          | {{pop.t}}
+          | {{ pop.t }}
         .description(v-if='pop.p', v-bind:class = "{ 'long' : pop.p.length > 2 || pop.p[0].length > 30}")
           hr
           .ui.list
@@ -27,11 +27,11 @@ export default {
   methods: {
   },
   mounted () {
-    this.pop = this.foods[this.$route.params.id]
+    this.pop = this.foods[this.$route.params.id] || {}
   },
   watch: {
     foods (val) {
-      this.pop = this.foods[this.$route.params.id]
+      this.pop = val[this.$route.params.id]
     }
   }
 }
