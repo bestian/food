@@ -13,12 +13,12 @@
       .ui.two.column.stackable.row
         .column
           router-link(:to="'/item/' + (foods.length - 1)")
-            h3 最新更新：{{foods[foods.length - 1].t}}
-            img.small(:src = "'/static/images/' + foods[foods.length - 1].i")
+            h3 最新更新1：{{foods[foods.length - 1].t}}
+            img.small.rad(:src = "'/static/images/' + foods[foods.length - 1].i")
         .column
           router-link(:to="'/item/' + (foods.length - 2)")
-            h3 最新更新：{{foods[foods.length - 2].t}}
-            img.small(:src = "'/static/images/' + foods[foods.length - 2].i")
+            h3 最新更新2：{{foods[foods.length - 2].t}}
+            img.small.rad(:src = "'/static/images/' + foods[foods.length - 2].i")
     br
     img(class="image", v-for="(image, i) in images", :src="image", :key="i", @click="index = i")
     vue-gallery-slideshow(:images="images", :index="index")
@@ -132,7 +132,18 @@ export default {
 img {
   width: 50vmin;
   height: 36vmin;
+  transition: all 1s ease;
+}
+
+img.rad {
   border-radius: 15px;
+}
+
+img:hover {
+  transform: translateY(-2px) scale(2);
+  border-radius: 50%;
+  position: relative;
+  z-index: 999;
 }
 
 @media screen and (max-width: 600px) {

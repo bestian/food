@@ -87,6 +87,8 @@ p {
 }
 
 img {
+  width: 15vmin;
+  height: 15vmin;
   float: left;
   border-radius: 50%;
   margin: 10px 10px;

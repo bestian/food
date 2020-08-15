@@ -7,21 +7,21 @@
         option(v-for = "f in foods", :value = "f.t")
 
   hr
-  .ui.animated.four.doubling.cards.container(
+  .ui.animated.two.doubling.cards.container(
   v-show = "mode == 'image'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     :to = "'/item/' + index")
       .big.image
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .ui.header
-        | {{f.t}}
+        | {{index}}. {{f.t}}
       .description(v-if='f.p')
         hr
         .ui.list
           .item(v-for='(p, idx) in f.p.slice(0,5)', v-bind:key='idx')
             vue-simple-markdown(:source="p")
         br
-  .ui.animated.eight.doubling.cards.container(
+  .ui.animated.four.doubling.cards.container(
   v-show = "mode == 'avatar'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     :to = "'/item/' + index")
@@ -29,7 +29,7 @@
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .filler
       .ui.header
-        | {{f.t}}
+        | {{index}}. {{f.t}}
       .description(v-if='f.p && false')
         | 說明：
         hr
@@ -38,12 +38,12 @@
   .ui.horizontal.grid.container(
   v-show = "mode == 'list'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     .ui.eight.column.doubling.row
-      router-link.column(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
+      router-link.column.text(v-for='(f, index) in foods.slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
         :to = "'/item/' + index")
         .image.ui.avatar
           img(:src="'/static/images/' + f.i")
         .description
-          | {{f.t.substr(0,3)}}...
+          | {{index}}. {{f.t.substr(0,6)}}{{ f.t.substr(0,6) == f.t ? '' : '...'}}
   transition(name="fade")
     pop(:foods = "foods", v-show="showPop")
 </template>
@@ -142,6 +142,10 @@ export default {
 
 .ui.eight.column.doubling.row .column {
   margin-top: 1em;
+}
+
+a.column.text {
+  padding: 5px !important;
 }
 
 </style>

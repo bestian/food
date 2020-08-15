@@ -3,8 +3,8 @@
   #pop
     router-link.back(to="/foods")
     .ui.container
-      .ui.centered.card(v-if="pop.t")
-        router-link.big.image(to="/foods")
+      .ui.centered.card(v-if="pop && pop.t")
+        .big.image
           .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
         .ui.header
           | {{ pop.t }}
@@ -96,7 +96,7 @@ p {
 
 .image .square {
   width: 100%;
-  height: 33vh;
+  height: 33vmin;
   background-size: cover;
   background-position: center;
 }
