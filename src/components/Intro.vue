@@ -14,11 +14,11 @@
         .column
           router-link(:to="'/item/' + (foods.length - 1)")
             h3 最新更新1：{{foods[foods.length - 1].t}}
-            img.small.rad(:src = "'/static/images/' + foods[foods.length - 1].i")
+            .square(:style = "{ 'background-image' : 'url(/static/images/' + foods[foods.length - 1].i + ')' }")
         .column
           router-link(:to="'/item/' + (foods.length - 2)")
             h3 最新更新2：{{foods[foods.length - 2].t}}
-            img.small.rad(:src = "'/static/images/' + foods[foods.length - 2].i")
+            .square(:style = "{ 'background-image' : 'url(/static/images/' + foods[foods.length - 2].i + ')' }")
     br
     img(class="image", v-for="(image, i) in images", :src="image", :key="i", @click="index = i")
     vue-gallery-slideshow(:images="images", :index="index")
@@ -169,6 +169,15 @@ img:hover {
   cursor: pointer;
   height: 5vmin;
   width: auto;
+}
+
+.square {
+  margin: 1em auto;
+  width: 85%;
+  height: 35vmin;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
 }
 
 </style>
