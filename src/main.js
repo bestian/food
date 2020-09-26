@@ -9,6 +9,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueSimpleMarkdown from 'vue-simple-markdown'
 import vueHeadful from 'vue-headful'
+import './registerServiceWorker'
 
 Vue.component('vue-headful', vueHeadful)
 
