@@ -10,6 +10,11 @@ import VueAxios from 'vue-axios'
 import VueSimpleMarkdown from 'vue-simple-markdown'
 import vueHeadful from 'vue-headful'
 import './registerServiceWorker'
+import VueGtag from 'vue-gtag'
+
+Vue.use(VueGtag, {
+  config: { id: "G-40QSF1E9Y" }
+}, router)
 
 Vue.component('vue-headful', vueHeadful)
 
