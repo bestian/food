@@ -133,7 +133,7 @@ export default {
 }
 
 .small.image .square {
-  height: 20vh;
+  height: 33vh;
 }
 
 .floated.left {
