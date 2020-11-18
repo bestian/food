@@ -10,13 +10,16 @@
       router-link.item(to="/thoughts" exact='')
         i.fat-only.comments.icon
         span 小記
+      router-link.item(to="/outer" exact='')
+        i.fat-only.sign.language.icon
+        span 資源
+      router-link.item(to="/diet" exact='')
+        i.fat-only.user.icon
+        span 習慣
       // router-link.item.fat-only(to="/baby" exact='')
         i.user.icon
         span 嬰幼兒
         span 食譜
-      router-link.item(to="/outer" exact='')
-        i.fat-only.sign.language.icon
-        span 資源
       .right.menu.fat-only
         .item
           iframe(src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ffood.bestian.tw&layout=button_count&size=small&mobile_iframe=true&appId=485195848253155&width=100&height=20" width="100" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
@@ -90,6 +93,9 @@ a, button, .clickable {
   }
   .button {
     max-width: 100% !important;
+  }
+  .item {
+    min-width: 0 !important;
   }
 }
 

@@ -6,6 +6,7 @@ import Item from '@/components/Item'
 import Thoughts from '@/components/Thoughts'
 import Baby from '@/components/Baby'
 import Outer from '@/components/Outer'
+import Diet from '@/components/Diet'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/outer',
       name: 'Outer',
       component: Outer
+    },
+    {
+      path: '/diet',
+      name: 'Diet',
+      component: Diet
     }
   ]
 })

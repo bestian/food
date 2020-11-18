@@ -13,7 +13,7 @@ import './registerServiceWorker'
 import VueGtag from 'vue-gtag'
 
 Vue.use(VueGtag, {
-  config: { id: "G-40QSF1E9Y" }
+  config: { id: 'G-40QSF1E9Y' }
 }, router)
 
 Vue.component('vue-headful', vueHeadful)
