@@ -1,5 +1,5 @@
 <template lang="jade">
-.bar(:style = "{ width: p + '%', 'background-color': c}")
+.bar(:style = "{ width: p + '%', 'background': 'linear-gradient(0deg, rgba(20,20,20,1) 0%, ' + c + ' 100%)'}")
   | {{ t }}
   img(:src = "i")
 </template>
@@ -22,7 +22,7 @@ export default {
 
 .bar {
   display: inline-block;
-  color: black;
+  color: white;
 }
 
 img {
