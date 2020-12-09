@@ -2,13 +2,22 @@
 .hello
   vue-headful(:title="'關於本站-' + title")
   .ui.piled.segment.container
-    h3 這裡用來存放個人（Hsinyi）的煮食紀錄
+    h3.center Ｈi 這裡用來存放Hsinyi的煮食紀錄
       br
-      | 最新消息，請上
+      | 點「食譜」可以看到簡記分享
+      br
+      | FB分享請見粉絲頁-
       a(href="https://www.facebook.com/%E7%9C%9F%E8%94%AC%E6%9C%8D-110229097348056/", target="_blank")
         i.facebook.icon
         | 真蔬服
-    vue-simple-markdown(:source="md")
+    p.main
+      | 我們家的料理，蔬食比例較多，沒有特別標素不素，
+      br
+      | 料理靈感來自大地、靈感乍現，以及許多人分享的經驗與智慧。
+      br
+      | 飲食區打食材關鍵字（如：紅豆）可以找到相關的料理，
+      br
+      | 祝大家食在喜悅、自然~😀
     .ui.grid(v-if = "foods.length > 0")
       .ui.two.column.stackable.row
         .column
@@ -38,13 +47,7 @@ export default {
     return {
       interval: undefined,
       index: undefined,
-      myIndex: 93,
-      md: `
-      總數上，蔬食比例較多，沒有特別標素不素，
-      料理靈感來自大地、靈感乍現，以及許多人分享的經驗與智慧。
-      飲食區打食材關鍵字（如：紅豆）可以找到相關的料理，
-      祝大家食在喜悅、自然~:smile:
-      `
+      myIndex: 93
     }
   },
   computed: {
@@ -146,10 +149,20 @@ img:hover {
   z-index: 999;
 }
 
+.main {
+  text-align: left;
+  margin: 2em calc(100px + 10vw);
+  font-size: 16px;
+}
+
 @media screen and (max-width: 600px) {
   img {
-  width: 80vmin;
-  height: 50vmin;
+    width: 80vmin;
+    height: 50vmin;
+  }
+  .main {
+    text-align: left;
+    margin: 2em 0;
   }
 }
 

@@ -1,12 +1,13 @@
 <template lang="jade">
 .hello
   vue-headful(:title="'飲食習慣-' + title")
-  h1 飲食習慣
-  div
-    div.diet(v-for = "(o, idx) in diets", :key = "o.n")
-      h3 {{ 4 - idx }}：{{ o.n }}
-      div.d
-        bar(v-for = "d in o.ds", :key = "d.t", :t = "d.t", :p = "d.p", :c = "d.c", :i = "d.i")
+  .ui.container
+    h1 飲食習慣
+    div
+      div.diet(v-for = "(o, idx) in diets", :key = "o.n")
+        h3 {{ 4 - idx }}：{{ o.n }}
+        div.d
+          bar(v-for = "d in o.ds", :key = "d.t", :t = "d.t", :p = "d.p", :c = "d.c", :i = "d.i")
 
 </template>
 

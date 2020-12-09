@@ -2,7 +2,7 @@
 .hello
   vue-headful(:title="'想法記錄-' + title")
   h1 這裡放一些對煮食、飲食的想法記錄
-  .ui.piled.segment.container
+  .ui.piled.segment.container#thin
     img(src="/static/img/hsyinyi.jpg")
     h2 對飲食的想法
     p 如果真的要說有什麼特別，我會比較注意除了米飯和麵粉，也以其他澱粉、五穀雜糧當主食，例如吃小米、芋頭、南瓜、地瓜、山藥當主食。
@@ -14,7 +14,7 @@
     p 蓮藕高湯單煮非常好喝，混搭燕麥有點澱粉濃稠感也很棒，有時這就是我們家的主食！特別前陣子蓮藕產季，喜歡煮蓮藕燕麥湯！什麼調味都不加就好喝極了！小孩喜歡這種雜糧或五穀根莖（例如牛蒡）的清湯，風味好，營養又好吸收。
 
     p 我的經驗是，均衡的雜糧蔬食、不過度調味，比在意有沒有吃到肉啊蛋啊來得重要。^_^
-  //.ui.piled.segment.container
+  //.ui.piled.segment.container#thin
     img(src="/static/img/hsyinyi.jpg")
     p 我當初覺得
     p 在醫院生產後，胎盤大多當廢棄物被處理掉吧
@@ -47,7 +47,7 @@
     p 不太容易保存胎盤做料理
     p 但還是可以參考下
     p 貼過來分享：）
-  .ui.piled.segment.container
+  .ui.piled.segment.container#thin
     img(src="/static/img/hsyinyi.jpg")
     h2 吃夠了 VS 吃飽了
     p 小孩從小吃東西，我都是問他：吃夠了嗎？
@@ -81,7 +81,7 @@ export default {
 <style scoped>
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   text-align: left;
 }
@@ -92,6 +92,10 @@ img {
   float: left;
   border-radius: 50%;
   margin: 10px 10px;
+}
+
+#thin {
+  width: 50vw;
 }
 
 </style>
