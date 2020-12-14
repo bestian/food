@@ -8,9 +8,9 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import VueSimpleMarkdown from 'vue-simple-markdown';
 import vueHeadful from 'vue-headful';
-import './registerServiceWorker';
 import router from './router';
 import App from './App.vue';
+import './registerServiceWorker';
 
 Vue.use(VueGtag, {
   config: { id: 'G-40QSF1E9Y' },
