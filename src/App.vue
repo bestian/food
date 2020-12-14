@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   #app
     .ui.labeled.icon.menu
       router-link.item(to="/" exact='')
@@ -11,7 +11,7 @@
         i.fat-only.comments.icon
         span 小記
       router-link.item(to="/outer" exact='')
-        i.fat-only.sign.language.icon
+        i.fat-only.sitemap.icon
         span 資源
       router-link.item(to="/diet" exact='')
         i.fat-only.user.icon
@@ -30,24 +30,24 @@
 <script>
 export default {
   name: 'App',
-  data () {
+  data() {
     return {
       foods: [],
-      title: '自然美食DIY'
-    }
+      title: '自然美食DIY',
+    };
   },
   // computed: {
   //  foods: function () {
   //    return this.foods_o.slice().reverse()
   //  }
   // }
-  mounted () {
-    var vm = this
-    this.$http.get('/static/foods.json').then(response => {
-      vm.foods = response.data
-    })
-  }
-}
+  mounted() {
+    const vm = this;
+    this.$http.get('/static/foods.json').then((response) => {
+      vm.foods = response.data;
+    });
+  },
+};
 </script>
 
 <style>

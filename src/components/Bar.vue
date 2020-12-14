@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .bar(:style = "{ width: p + '%', 'background': 'linear-gradient(0deg, rgba(20,20,20,1) 0%, ' + c + ' 100%)'}")
   | {{ t }}
   img(:src = "i")
@@ -8,13 +8,13 @@
 export default {
   name: 'Thoughts',
   props: ['t', 'p', 'c', 'i'],
-  data () {
+  data() {
     return {
-    }
+    };
   },
   methods: {
-  }
-}
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

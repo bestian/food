@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .hello
   vue-headful(:title="'關於本站-' + title")
   .ui.piled.segment.container
@@ -35,87 +35,85 @@
 
 <script>
 
-import VueGallerySlideshow from 'vue-gallery-slideshow'
+import VueGallerySlideshow from 'vue-gallery-slideshow';
 
 export default {
   name: 'Intro',
   props: ['foods', 'title'],
   components: {
-    VueGallerySlideshow
+    VueGallerySlideshow,
   },
-  data () {
+  data() {
     return {
       interval: undefined,
       index: undefined,
-      myIndex: 93
-    }
+      myIndex: 93,
+    };
   },
   computed: {
-    images: function () {
-      return this.foods.map(function (o) {
-        return '/static/images/' + o.i
-      })
-    }
+    images() {
+      return this.foods.map((o) => `/static/images/${o.i}`);
+    },
   },
   methods: {
-    reset: function () {
-      this.index = null
+    reset() {
+      this.index = null;
     },
-    go: function () {
-      this.unbind()
-      this.$router.push('/item/' + this.index)
+    go() {
+      this.unbind();
+      this.$router.push(`/item/${this.index}`);
     },
-    next: function () {
-      this.index++
+    next() {
+      this.index += 1;
     },
-    prev: function () {
-      this.index--
+    prev() {
+      this.index -= 1;
     },
-    bind: function () {
-      var vm = this
-      var elem = document.getElementsByClassName('vgs__container__img')[0]
+    bind() {
+      const vm = this;
+      const elem = document.getElementsByClassName('vgs__container__img')[0];
       if (elem !== undefined) {
-        console.log(elem)
-        console.log(vm.index)
-        elem.removeEventListener('click', vm.go)
-        elem.addEventListener('click', vm.go)
+        console.log(elem);
+        console.log(vm.index);
+        elem.removeEventListener('click', vm.go);
+        elem.addEventListener('click', vm.go);
       }
-      var n = document.getElementsByClassName('vgs__next')[0]
+      const n = document.getElementsByClassName('vgs__next')[0];
       if (n !== undefined) {
-        n.removeEventListener('click', vm.next)
-        n.addEventListener('click', vm.next)
+        n.removeEventListener('click', vm.next);
+        n.addEventListener('click', vm.next);
       }
-      var p = document.getElementsByClassName('vgs__prev')[0]
+      const p = document.getElementsByClassName('vgs__prev')[0];
       if (n !== undefined) {
-        p.removeEventListener('click', vm.prev)
-        p.addEventListener('click', vm.prev)
+        p.removeEventListener('click', vm.prev);
+        p.addEventListener('click', vm.prev);
       }
     },
-    unbind: function () {
-      var vm = this
-      clearInterval(this.interval)
-      var elem = document.getElementsByClassName('vgs__container__img')[0]
+    unbind() {
+      const vm = this;
+      clearInterval(this.interval);
+      const elem = document.getElementsByClassName('vgs__container__img')[0];
       if (elem !== undefined) {
-        elem.removeEventListener('click', vm.go)
+        elem.removeEventListener('click', vm.go);
       }
-      var n = document.getElementsByClassName('vgs__next')[0]
+      const n = document.getElementsByClassName('vgs__next')[0];
       if (n !== undefined) {
-        n.removeEventListener('click', vm.next)
+        n.removeEventListener('click', vm.next);
       }
-      var p = document.getElementsByClassName('vgs__prev')[0]
+      const p = document.getElementsByClassName('vgs__prev')[0];
       if (n !== undefined) {
-        p.removeEventListener('click', vm.prev)
+        p.removeEventListener('click', vm.prev);
       }
-    }
+    },
   },
-  updated () {
-    this.unbind()
-    this.interval = setInterval(this.bind, 500)
+  updated() {
+    this.unbind();
+    this.interval = setInterval(this.bind, 500);
   },
-  beforeUpdated () {
-    this.unbind()
-  }
-}
+  beforeUpdated() {
+    this.unbind();
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

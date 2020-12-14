@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .hello
   .ui.from.container
     .ui.search
@@ -50,29 +50,29 @@
 
 <script>
 
-import Pop from './Pop.vue'
+import Pop from './Pop.vue';
 
 export default {
   name: 'Cards',
   props: ['foods', 'showPop', 'mode'],
   components: { Pop },
-  data () {
+  data() {
     return {
       msg: '自然美食DIY',
       mySearch: '',
-      n: 20
-    }
+      n: 20,
+    };
   },
   methods: {
-    has: function (j, k) {
-      if (!k) return true
-      return JSON.stringify(j).indexOf(k) > -1
+    has(j, k) {
+      if (!k) return true;
+      return JSON.stringify(j).indexOf(k) > -1;
     },
-    loadMore: function () {
-      this.n += 20
-    }
-  }
-}
+    loadMore() {
+      this.n += 20;
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

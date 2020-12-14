@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .hello
   h1 {{ msg }}
   h3 家裡孩子從小跟著大人吃
@@ -12,32 +12,32 @@
 
 <script>
 
-import Cards from './Cards.vue'
+import Cards from './Cards.vue';
 
 export default {
   name: 'Baby',
   props: ['foods'],
   components: { Cards },
-  data () {
+  data() {
     return {
       msg: '嬰幼兒自然美食DIY',
       mySearch: '',
       showPop: false,
-      pop: ''
-    }
+      pop: '',
+    };
   },
   computed: {
-    babyfoods: function () {
-      return this.foods.filter(function (f) { return f.b })
-    }
+    babyfoods() {
+      return this.foods.filter((f) => f.b);
+    },
   },
   methods: {
-    has: function (j, k) {
-      if (!k) return true
-      return JSON.stringify(j).indexOf(k) > -1
-    }
-  }
-}
+    has(j, k) {
+      if (!k) return true;
+      return JSON.stringify(j).indexOf(k) > -1;
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .hello
   #pop
     router-link.back(to="/foods")
@@ -8,7 +8,7 @@
           .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
         .ui.header
           | {{ pop.t }}
-        .description(v-if='pop.p', v-bind:class = "{ 'long' : pop.p.length > 2 || pop.p[0].length > 30}")
+        .description(v-if='pop.p', :class = "{long: pop.p.length > 2 || pop.p[0].length > 30}")
           hr
           .ui.list
             .item(v-for='(p, idx) in pop.p', v-bind:key='idx')
@@ -19,22 +19,22 @@
 export default {
   name: 'Pop',
   props: ['foods'],
-  data () {
+  data() {
     return {
-      pop: {}
-    }
+      pop: {},
+    };
   },
   methods: {
   },
-  mounted () {
-    this.pop = this.foods[this.$route.params.id] || {}
+  mounted() {
+    this.pop = this.foods[this.$route.params.id] || {};
   },
   watch: {
-    foods (val) {
-      this.pop = val[this.$route.params.id]
-    }
-  }
-}
+    foods(val) {
+      this.pop = val[this.$route.params.id];
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

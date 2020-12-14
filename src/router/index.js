@@ -1,51 +1,51 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Intro from '@/components/Intro'
-import Foods from '@/components/Foods'
-import Item from '@/components/Item'
-import Thoughts from '@/components/Thoughts'
-import Baby from '@/components/Baby'
-import Outer from '@/components/Outer'
-import Diet from '@/components/Diet'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Intro from '@/components/Intro.vue';
+import Foods from '@/components/Foods.vue';
+import Item from '@/components/Item.vue';
+import Thoughts from '@/components/Thoughts.vue';
+import Baby from '@/components/Baby.vue';
+import Outer from '@/components/Outer.vue';
+import Diet from '@/components/Diet.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
       name: 'Intro',
-      component: Intro
+      component: Intro,
     },
     {
       path: '/foods',
       name: 'Foods',
-      component: Foods
+      component: Foods,
     },
     {
       path: '/item/:id',
       name: 'item',
-      component: Item
+      component: Item,
     },
     {
       path: '/thoughts',
       name: 'Thoughts',
-      component: Thoughts
+      component: Thoughts,
     },
     {
       path: '/baby',
       name: 'Baby',
-      component: Baby
+      component: Baby,
     },
     {
       path: '/outer',
       name: 'Outer',
-      component: Outer
+      component: Outer,
     },
     {
       path: '/diet',
       name: 'Diet',
-      component: Diet
-    }
-  ]
-})
+      component: Diet,
+    },
+  ],
+});

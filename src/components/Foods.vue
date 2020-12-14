@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .hello
   vue-headful(:title="'食譜-' + title")
   h1 {{ msg }}
@@ -22,25 +22,25 @@
 
 <script>
 
-import Cards from './Cards.vue'
+import Cards from './Cards.vue';
 
 export default {
   name: 'Foods',
   props: ['foods', 'title'],
   components: { Cards },
-  data () {
+  data() {
     return {
       mode: 'avatar',
-      msg: '自然美食DIY'
-    }
+      msg: '自然美食DIY',
+    };
   },
   methods: {
-    has: function (j, k) {
-      if (!k) return true
-      return JSON.stringify(j).indexOf(k) > -1
-    }
-  }
-}
+    has(j, k) {
+      if (!k) return true;
+      return JSON.stringify(j).indexOf(k) > -1;
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
