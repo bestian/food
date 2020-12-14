@@ -11,6 +11,7 @@ import vueHeadful from 'vue-headful';
 import router from './router';
 import App from './App.vue';
 import './registerServiceWorker';
+import 'semantic-ui-css/semantic.min.css';
 
 Vue.use(VueGtag, {
   config: { id: 'G-40QSF1E9Y' },
