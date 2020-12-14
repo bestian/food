@@ -1,6 +1,8 @@
 module.exports = {
   pwa: {
-    workboxPluginMode: 'GenerateSW',
+    workboxOptions: {
+      exclude: ['*.gitkeep'],
+    }
   },
   publicPath: process.env.NODE_ENV === 'production'
     ? '/'
