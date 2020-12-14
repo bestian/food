@@ -1,4 +1,5 @@
 module.exports = {
+  css: {sourceMap: true},
   pwa: {
     workboxOptions: {
       exclude: ['.gitkeep','*.gitkeep', '*.map'],
