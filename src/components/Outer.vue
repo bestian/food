@@ -11,7 +11,7 @@
             | 粉絲頁
           .ui.left.aligned.list
             .item(v-for = "(f, idx) in fb", v-bind:key="idx")
-              a(:href="f.h", target="_blank")
+              a(:href="f.h", target="_blank", rel="noopener noreferrer")
                 img(:src="'http://www.google.com/s2/favicons?domain=' + f.h")
                 | {{f.t}}
           hr
@@ -20,7 +20,7 @@
             | 採買網站
           .ui.left.aligned.list
             .item(v-for = "(s, idx) in sites", v-bind:key="idx")
-              a(:href="s.h", target="_blank")
+              a(:href="s.h", target="_blank", rel="noopener noreferrer")
                 img(:src="'http://www.google.com/s2/favicons?domain=' + s.h")
                 | {{s.t}}
           hr
@@ -29,7 +29,7 @@
             | 實體商店
           .ui.left.aligned.list
             .item(v-for = "(m, idx) in markets", v-bind:key="idx")
-              a(:href="m.h", target="_blank")
+              a(:href="m.h", target="_blank", rel="noopener noreferrer")
                 img(:src="'http://www.google.com/s2/favicons?domain=' + m.h")
                 | {{m.t}}
       .column
@@ -39,7 +39,7 @@
             | 書籍推薦
           .ui.left.aligned.list
             .item(v-for = "(b, idx) in books", v-bind:key="idx")
-              a(:href="b.h", target="_blank")
+              a(:href="b.h", target="_blank", rel="noopener noreferrer")
                 img(:src="'http://www.google.com/s2/favicons?domain=' + b.h")
                 | {{b.t}}
 </template>
