@@ -6,7 +6,7 @@
     h3.center 點「食譜」可以看到簡記分享
       br
       | FB分享請見粉絲頁-
-      a(href="https://www.facebook.com/%E7%9C%9F%E8%94%AC%E6%9C%8D-110229097348056/", target="_blank")
+      a(href="https://www.facebook.com/%E7%9C%9F%E8%94%AC%E6%9C%8D-110229097348056/", target="_blank", rel="noopener noreferrer")
         i.facebook.icon
         | 真蔬服
     p.main
