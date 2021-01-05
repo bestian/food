@@ -123,6 +123,10 @@ export default {
   text-align: left;
 }
 
+a {
+  color: #00c;
+}
+
 @media screen and (max-width: 620px) {
   .markdown-body {
     padding-left: 0;
