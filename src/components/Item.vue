@@ -8,7 +8,7 @@
           a(:href="'/static/images/' + pop.i", target="_blank", rel="noopener noreferrer")
             .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
       .column
-        .ui.header
+        h1.ui.header
           | {{ pop.t }}
         .small.image.fat-only(v-if="pop.is")
           a(v-for="i in pop.is", :key="i", :href="'/static/images/' + i", target="_blank", rel="noopener noreferrer")
