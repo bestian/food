@@ -28,7 +28,7 @@
             h3 最新更新2：{{foods[foods.length - 2].t}}
             .square(:style = "{ 'background-image' : 'url(/static/images/' + foods[foods.length - 2].i + ')' }")
     br
-    img(class="image", v-for="(image, i) in images", :src="image", :key="i", @click="index = i")
+    img(class="image", v-for="(image, i) in images", :src="image", :key="i", @click="index = i", :alt="image")
     vue-gallery-slideshow(:images="images", :index="index")
 </template>
 
