@@ -21,7 +21,7 @@ export default {
 #ad {
   position: fixed;
   bottom: 0;
-  right: 0;
+  left: 0;
   background-color: rgba(255,255,255,0.8);
   border-radius: 5px;
   padding: .5em .5em;

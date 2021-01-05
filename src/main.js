@@ -8,10 +8,13 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import VueSimpleMarkdown from 'vue-simple-markdown';
 import vueHeadful from 'vue-headful';
-import router from './router';
-import App from './App.vue';
 import './registerServiceWorker';
 import 'semantic-ui-css/semantic.min.css';
+import VueSocialSharing from 'vue-social-sharing';
+import App from './App.vue';
+import router from './router';
+
+Vue.use(VueSocialSharing);
 
 Vue.use(VueGtag, {
   config: { id: 'G-40QSF1E9Y' },

@@ -5,7 +5,8 @@
     .ui.container
       .ui.centered.card(v-if="pop && pop.t")
         .big.image
-          .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
+          a(:href="'/static/images/' + pop.i", target="_blank", rel="noopener noreferrer")
+            .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
         .ui.header
           | {{ pop.t }}
         .description(v-if='pop.p', :class = "{long: pop.p.length > 2 || pop.p[0].length > 30}")
@@ -96,7 +97,7 @@ p {
 
 .image .square {
   width: 100%;
-  height: 33vmin;
+  height: 50vh;
   background-size: cover;
   background-position: center;
 }
