@@ -25,7 +25,7 @@
         br
         br
         .ui.vertical.buttons
-          ShareNetwork.ui.huge.blue.button(network="facebook", :url="'https://food.bestian.tw/#/item/' + $route.params.id", title="自然美食DIY", :description="'自然美食DIY - ' + pop.t", :quote="'簡單又美好的食譜 - ' + pop.t")
+          ShareNetwork.ui.huge.blue.button(network="facebook", :url="'https://food.bestian.tw/#/item/' + $route.params.id", title="自然美食DIY", :description="'自然美食DIY - ' + pop.t", :quote="'簡單又美好的食譜 - ' + pop.t", @click="trackButton('share', 5)")
             i.share.icon
             | 分享此頁
           router-link(to="/foods").ui.huge.green.button
@@ -57,6 +57,14 @@ export default {
         return this.foods[this.$route.params.id].t;
       }
       return '讀取中';
+    },
+    trackButton (t, v) {
+      this.$gtag.event('action', {
+        event_category: t,
+        event_action: t,
+        event_label: t,
+        value: v
+      })
     },
   },
   mounted() {
