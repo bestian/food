@@ -58,13 +58,13 @@ export default {
       }
       return '讀取中';
     },
-    trackButton (t, v) {
+    trackButton(t, v) {
       this.$gtag.event('action', {
         event_category: t,
         event_action: t,
         event_label: t,
-        value: v
-      })
+        value: v,
+      });
     },
   },
   mounted() {
