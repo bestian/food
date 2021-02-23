@@ -4,7 +4,7 @@
   h1 {{ msg }}
   .ui.form.container
     .inline.fields
-      label 檢視模式
+      label 檢視模式:
       .field
         .ui.radio.checkbox
           input(type="radio", name="mode", value="image", v-model="mode")
@@ -53,5 +53,10 @@ export default {
 .animated .card:hover {
   top: -2px;
   transition: all 0.3s ease;
+}
+
+label::before, label::after {
+  position: relative;
+  left: .6em !important;
 }
 </style>
