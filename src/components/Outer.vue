@@ -4,7 +4,7 @@
   h1 推薦
   .ui.grid.container
     .ui.stackable.row
-      .four.wide.column
+      .six.wide.column
         .ui.segment
           h2.ui.header
             i.facebook.icon
@@ -32,7 +32,7 @@
               a(:href="m.h", target="_blank", rel="noopener noreferrer")
                 img(:src="'http://www.google.com/s2/favicons?domain=' + m.h")
                 | {{m.t}}
-      .twelve.wide.column
+      .ten.wide.column
         .ui.segment
           h2.ui.header
             i.book.icon
