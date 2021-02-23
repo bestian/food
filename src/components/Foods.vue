@@ -55,7 +55,7 @@ export default {
   transition: all 0.3s ease;
 }
 
-label::before, label::after {
+input, label::before, label::after {
   position: relative;
   left: .6em !important;
 }
