@@ -3,8 +3,8 @@
   vue-headful(:title="'好站推薦-' + title")
   h1 推薦
   .ui.grid.container
-    .ui.two.column.stackable.row
-      .column
+    .ui.stackable.row
+      .four.wide.column
         .ui.segment
           h2.ui.header
             i.facebook.icon
@@ -26,13 +26,13 @@
           hr
           h2.ui.header
             i.shopping.basket.icon
-            | 實體商店
+            | 實體店
           .ui.left.aligned.list
             .item(v-for = "(m, idx) in markets", v-bind:key="idx")
               a(:href="m.h", target="_blank", rel="noopener noreferrer")
                 img(:src="'http://www.google.com/s2/favicons?domain=' + m.h")
                 | {{m.t}}
-      .column
+      .twelve.wide.column
         .ui.segment
           h2.ui.header
             i.book.icon
@@ -65,6 +65,7 @@ export default {
         { t: '藝食知選', h: 'https://www.facebook.com/shumeitofu' },
         { t: '主婦聯盟', h: 'https://www.hucc-coop.tw/' },
         { t: '里仁', h: 'https://www.leezen.com.tw/' },
+        { t: '小小蔬房', h: 'https://www.facebook.com/xiaoxiaoplace/' },
       ],
       books: [
         { t: '幸福市集：種的安心、吃的放心', h: 'https://www.books.com.tw/products/0010577238' },

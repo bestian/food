@@ -14,7 +14,7 @@
       .big.image
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .ui.header
-        | {{index}}. {{f.t}}
+        | {{(foods.length - index - 1)}}. {{f.t}}
       .description(v-if='f.p && f.p[0]')
         hr
         .ui.list
@@ -29,7 +29,7 @@
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .filler
       .ui.header
-        | {{index}}. {{f.t}}
+        | {{(foods.length - index - 1)}}. {{f.t}}
       .description(v-if='f.p && f.p[0] && false')
         | 說明：
         hr
@@ -43,7 +43,7 @@
         .image.ui.avatar
           img(:src="'/static/images/' + f.i")
         .description
-          | {{index}}. {{f.t.substr(0,6)}}{{ f.t.substr(0,6) == f.t ? '' : '...'}}
+          | {{(foods.length - index - 1)}}. {{f.t.substr(0,6)}}{{ f.t.substr(0,6) == f.t ? '' : '...'}}
   transition(name="fade")
     pop(:foods = "foods", v-show="showPop")
 </template>

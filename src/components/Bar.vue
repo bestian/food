@@ -23,6 +23,7 @@ export default {
 .bar {
   display: inline-block;
   color: white;
+  border-radius: 5px;
 }
 
 img {

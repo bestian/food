@@ -130,11 +130,13 @@ h3 {
     font-size: 18px;
     line-height: 36px;
     margin: 2em 0;
+    border-radius: 5px;
   }
 }
 
 .d {
   border: 3px ridge gray;
+  border-radius: 10px;
 }
 
 </style>
