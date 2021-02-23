@@ -13,7 +13,7 @@
         .small.image.fat-only(v-if="pop.is")
           a(v-for="i in pop.is", :key="i", :href="'/static/images/' + i", target="_blank", rel="noopener noreferrer")
             .square(:style = "{ 'background-image' : 'url(/static/images/' + i + ')' }")
-        .description(v-if='pop.p', :class = "{long: pop.p.length > 2 || pop.p[0].length > 30}")
+        .description(v-if='pop.p', :class = "{long: pop.p.length > 2 || (pop.p[0] && pop.p[0].length > 30)}")
           hr
           .ui.list
             .item(v-for='(p, idx) in pop.p', v-bind:key='idx')
@@ -87,6 +87,9 @@ export default {
   background-size: cover;
   background-position: center;
   margin: 0 auto;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 5px 10px 2px #5B5B5B;
+  box-shadow: 0px 5px 10px 2px #5B5B5B;
 }
 
 .small.image .square {
@@ -96,6 +99,9 @@ export default {
   background-position: center;
   margin: 0 1%;
   display: inline-block;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 5px 10px 2px #5B5B5B;
+  box-shadow: 0px 5px 10px 2px #5B5B5B;
 }
 
 .column {
@@ -105,5 +111,9 @@ export default {
 .item {
   font-size: 18px;
   text-align: left;
+}
+
+img {
+  border-radius: 15px;
 }
 </style>

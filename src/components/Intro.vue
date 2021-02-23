@@ -136,7 +136,7 @@ a {
 img {
   width: 50vmin;
   height: 36vmin;
-  transition: all 1s ease;
+  transition: all .3s ease;
 }
 
 img.rad {
@@ -171,7 +171,7 @@ img:hover {
 }
 
 .list-enter-active {
-  transition: all 1s cubic-bezier(.4,-0.38,.71,1.61);
+  transition: all .3s cubic-bezier(.4,-0.38,.71,1.61);
 }
 
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
@@ -192,6 +192,8 @@ img:hover {
   background-size: cover;
   background-position: center;
   border-radius: 15px;
+  -webkit-box-shadow: 0px 5px 10px 2px #5B5B5B;
+  box-shadow: 0px 5px 10px 2px #5B5B5B;
 }
 
 </style>
