@@ -157,10 +157,6 @@ img.small:hover {
 }
 
 @media screen and (max-width: 600px) {
-  img {
-    width: 80vmin;
-    height: 50vmin;
-  }
   .main {
     text-align: left;
     margin: 2em 0;
