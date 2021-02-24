@@ -1,6 +1,8 @@
 <template lang="pug">
 .hello
   vue-headful(:title="'想法記錄-' + title")
+  router-link(to="/outer")
+    img.small(src="/img/elf.png", alt="elf")
   h1 這裡放一些對煮食、飲食的想法記錄
   .ui.piled.segment.container#thin
     img(src="/static/img/hsyinyi.jpg")

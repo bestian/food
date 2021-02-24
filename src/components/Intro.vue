@@ -2,6 +2,8 @@
 .hello
   vue-headful(:title="'關於本站-' + title")
   .ui.piled.segment.container
+    router-link(to="/foods")
+      img.float.left(src="/img/elf.png", alt="elf")
     h2.center Ｈi 這裡用來存放Hsinyi的煮食紀錄
     h3.center 點「食譜」可以看到簡記分享
       br
@@ -28,7 +30,7 @@
             h3 最新更新2：{{foods[foods.length - 2].t}}
             .square(:style = "{ 'background-image' : 'url(/static/images/' + foods[foods.length - 2].i + ')' }")
     br
-    img(class="image", v-for="(image, i) in images", :src="image", :key="i", @click="index = i", :alt="image")
+    img.small.image(v-for="(image, i) in images", :src="image", :key="i", @click="index = i", :alt="image")
     vue-gallery-slideshow(:images="images", :index="index")
 </template>
 
@@ -134,8 +136,6 @@ a {
 }
 
 img {
-  width: 50vmin;
-  height: 36vmin;
   transition: all .3s ease;
 }
 
@@ -143,7 +143,7 @@ img.rad {
   border-radius: 15px;
 }
 
-img:hover {
+img.small:hover {
   transform: translateY(-2px) scale(2);
   border-radius: 50%;
   position: relative;

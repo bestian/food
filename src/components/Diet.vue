@@ -2,6 +2,8 @@
 .hello
   vue-headful(:title="'飲食習慣-' + title")
   .ui.container
+    router-link(to="/")
+      img.small(src="/img/elf.png", alt="elf")
     h1 飲食習慣
     div
       div.diet(v-for = "(o, idx) in diets", :key = "o.n")

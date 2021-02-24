@@ -1,6 +1,8 @@
 <template lang="pug">
 .hello
   vue-headful(:title="'食譜-' + title")
+  router-link(to="/thoughts")
+    img.small(src="/img/elf.png", alt="elf")
   h1 {{ msg }}
   .ui.form.container
     .inline.fields

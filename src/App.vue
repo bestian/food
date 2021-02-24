@@ -112,7 +112,28 @@ a, button, .clickable {
   }
 }
 
-.router-link-active {
+.router-link-exact-active {
   background-color: #ccf !important;
 }
+
+img.float.left {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 2em;
+  height: 10em;
+}
+
+img.small {
+  border-radius: 50%;
+  height: 6em;
+}
+
+@media screen and (max-width:600px) {
+  img.float.left {
+    left: 0;
+    height: 5em;
+  }
+}
+
 </style>

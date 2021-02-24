@@ -1,6 +1,8 @@
 <template lang="pug">
 .hello
   vue-headful(:title="'好站推薦-' + title")
+  router-link(to="/diet")
+    img.small(src="/img/elf.png", alt="elf")
   h1 推薦
   .ui.grid.container
     .ui.stackable.row
