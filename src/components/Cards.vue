@@ -103,7 +103,10 @@ export default {
 }
 .animated .card:hover {
   top: -2px;
-  transition: all 0.3s ease;
+}
+
+.animated .card:hover .ui.header {
+  color: blue !important;
 }
 
 .animated .item{
