@@ -17,6 +17,7 @@
         span(v-if="!f.noIndex") {{(foods.length - index)}}
           i.utensil.spoon.icon(v-if ="index % 2 == 0")
           i.utensil.spoon.icon(v-else)
+        br.thin-only
         | {{f.t}}
       .description(v-if='f.p && f.p[0]')
         hr
@@ -35,6 +36,7 @@
         span(v-if="!f.noIndex") {{(foods.length - index)}}
           i.utensil.spoon.icon(v-if ="index % 2 == 0")
           i.utensil.spoon.icon(v-else)
+        br.thin-only
         | {{f.t}}
       .description(v-if='f.p && f.p[0] && f.long')
         | 說明：
