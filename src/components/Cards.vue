@@ -48,7 +48,8 @@
         .image.ui.avatar
           img(:src="'/static/images/' + f.i")
         .description
-          span(v-if="!f.noIndex") {{(foods.length - index)}}.
+          span(v-if="!f.noIndex") {{(foods.length - index)}}
+            i.utensil.spoon.icon
           | {{f.t.substr(0,6)}}{{ f.t.substr(0,6) == f.t ? '' : '...'}}
   transition(name="fade")
     pop(:foods = "foods", v-show="showPop")
