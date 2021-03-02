@@ -29,9 +29,9 @@
           ShareNetwork.ui.huge.blue.button(network="facebook", :url="'https://food.bestian.tw/#/tem/' + $route.params.id", title="自然美食DIY", :description="'自然美食DIY - ' + pop.t", :quote="'簡單又美好的食譜 - ' + pop.t", @click="trackButton('share', 5)")
             i.share.icon
             | 分享此頁
-          router-link(to="/tembei").ui.huge.green.button
+          router-link(to="/snacks").ui.huge.green.button
             i.arrow.left.icon
-            | 回到天貝
+            | 回到點心盤
 </template>
 
 <script>
@@ -40,7 +40,7 @@ import Cards from './Cards.vue';
 
 export default {
   name: 'Foods',
-  props: ['tembeis', 'title'],
+  props: ['snacks', 'title'],
   components: { Cards },
   data() {
     return {
@@ -54,8 +54,8 @@ export default {
       return JSON.stringify(j).indexOf(k) > -1;
     },
     getTitle() {
-      if (this.tembeis[this.$route.params.id]) {
-        return this.tembeis[this.$route.params.id].t;
+      if (this.snacks[this.$route.params.id]) {
+        return this.snacks[this.$route.params.id].t;
       }
       return '讀取中';
     },
@@ -69,10 +69,10 @@ export default {
     },
   },
   mounted() {
-    this.pop = this.tembeis[this.$route.params.id] || {};
+    this.pop = this.snacks[this.$route.params.id] || {};
   },
   watch: {
-    tembeis(val) {
+    snacks(val) {
       this.pop = val[this.$route.params.id];
     },
   },

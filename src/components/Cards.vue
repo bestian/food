@@ -36,7 +36,8 @@
         | 說明：
         hr
         ul.ui.bulleted.list
-          li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
+          li.item(v-for='(p, idx) in f.p', v-bind:key='idx', v-show="idx == 0") {{ p }} {{p.length < 20 ? '...' : ''}}
+            i.angle.double.right.arrow.icon
   .ui.horizontal.grid.container(
   v-show = "mode == 'list'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     .ui.eight.column.doubling.row
@@ -154,6 +155,14 @@ a.column.text {
 .ui.card {
   -webkit-box-shadow: 0px 5px 10px 2px #5B5B5B;
   box-shadow: 0px 5px 10px 2px #5B5B5B;
+}
+
+i.angle.double.right.arrow.icon {
+  float: right;
+}
+
+li.item {
+  padding-bottom: .82em !important;
 }
 
 </style>

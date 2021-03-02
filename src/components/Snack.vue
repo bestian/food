@@ -19,6 +19,11 @@
         .ui.radio.checkbox
           input(type="radio", name="mode", value="list", v-model="mode")
           label 文字
+  h3.ui.header 孩子們的點心，是每家帶一份共享。
+    br
+    | 有天開始，戶外的花圃一起加入點心盤。
+    br
+    | 飲食是整體的，不只是嘴巴吃~我們漸漸懂了：）
   cards(:foods = "snacks", :showPop = "false", :mode = "mode")
 </template>
 

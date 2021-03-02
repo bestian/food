@@ -15,13 +15,14 @@
             .square(:style = "{ 'background-image' : 'url(/static/images/' + i + ')' }")
         .description(v-if='pop.p', :class = "{long: pop.p.length > 2 || (pop.p[0] && pop.p[0].length > 30)}")
           hr
-          .ui.list
+          .ui.bulleted.list
             .item(v-for='(p, idx) in pop.p', v-bind:key='idx')
               vue-simple-markdown(:source="p")
         br.thin-only
         .small.image.thin-only(v-if="pop.is")
-          a(v-for="i in pop.is", :key="i", :href="'/static/images/' + i", target="_blank", rel="noopener noreferrer")
-            .square(:style = "{ 'background-image' : 'url(/static/images/' + i + ')' }")
+          .ui.bulleted.list
+            a.item(v-for="i in pop.is", :key="i", :href="'/static/images/' + i", target="_blank", rel="noopener noreferrer")
+              .square(:style = "{ 'background-image' : 'url(/static/images/' + i + ')' }")
         br
         br
         .ui.vertical.buttons

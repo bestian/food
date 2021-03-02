@@ -30,7 +30,7 @@
         .item
           iframe(src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ffood.bestian.tw&layout=button_count&size=small&mobile_iframe=true&appId=485195848253155&width=100&height=20" width="100" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media")
     #main
-      router-view(:foods = "foods", :tembeis = "tembeis",:title = "title")
+      router-view(:foods = "foods", :tembeis = "tembeis", :snacks = "snacks",:title = "title")
 </template>
 
 <script>
@@ -41,6 +41,7 @@ export default {
     return {
       foods: [],
       tembeis: [],
+      snacks: [],
       title: '自然美食DIY',
     };
   },
@@ -56,6 +57,9 @@ export default {
     });
     this.$http.get('/static/tembei.json').then((response) => {
       vm.tembeis = response.data;
+    });
+    this.$http.get('/static/snacks.json').then((response) => {
+      vm.snacks = response.data;
     });
   },
 };
