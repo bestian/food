@@ -27,10 +27,10 @@
     :to = "'/item/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
       .small.image
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
-      .filler
+      .filler(v-if = "!f.long")
       .ui.header
         | {{(foods.length - index)}}. {{f.t}}
-      .description(v-if='f.p && f.p[0] && false')
+      .description(v-if='f.p && f.p[0] && f.long')
         | 說明：
         hr
         ol.ui.ordered.list

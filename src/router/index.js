@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Intro from '@/components/Intro.vue';
 import Foods from '@/components/Foods.vue';
 import Snack from '@/components/Snack.vue';
+import Tembei from '@/components/Tembei.vue';
 import Item from '@/components/Item.vue';
 import Thoughts from '@/components/Thoughts.vue';
 import Baby from '@/components/Baby.vue';
@@ -27,6 +28,11 @@ export default new Router({
       path: '/snacks',
       name: 'Snack',
       component: Snack,
+    },
+    {
+      path: '/tembei',
+      name: 'Tembei',
+      component: Tembei,
     },
     {
       path: '/item/:id',

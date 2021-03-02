@@ -7,6 +7,9 @@
       router-link.item(to="/foods" exact='')
         i.fat-only.book.icon
         span 食譜
+      router-link.item(to="/tembei" exact='')
+        i.fat-only.circle.icon
+        span 天貝
       router-link.item(to="/snacks" exact='')
         i.fat-only.bullseye.icon
         span 點心
@@ -16,7 +19,7 @@
       router-link.item(to="/outer" exact='')
         i.fat-only.sitemap.icon
         span 資源
-      router-link.item(to="/diet" exact='')
+      // router-link.item(to="/diet" exact='')
         i.fat-only.user.icon
         span 習慣
       // router-link.item.fat-only(to="/baby" exact='')

@@ -1,6 +1,6 @@
 <template lang="pug">
 .hello
-  vue-headful(:title="'點心盤-' + title")
+  vue-headful(:title="'天貝-' + title")
   router-link(to="/thoughts")
     img.small(src="/img/elf.png", alt="elf")
   h1 {{ msg }}
@@ -19,7 +19,7 @@
         .ui.radio.checkbox
           input(type="radio", name="mode", value="list", v-model="mode")
           label 文字
-  cards(:foods = "snacks", :showPop = "false", :mode = "mode")
+  cards(:foods = "tembeis", :showPop = "false", :mode = "mode")
 </template>
 
 <script>
@@ -32,9 +32,9 @@ export default {
   components: { Cards },
   data() {
     return {
-      snacks: [],
+      tembeis: [],
       mode: 'avatar',
-      msg: '點心盤',
+      msg: '天貝',
     };
   },
   methods: {
@@ -45,8 +45,8 @@ export default {
   },
   mounted() {
     const vm = this;
-    this.$http.get('/static/snacks.json').then((response) => {
-      vm.snacks = response.data;
+    this.$http.get('/static/tembei.json').then((response) => {
+      vm.tembeis = response.data;
     });
   },
 };
