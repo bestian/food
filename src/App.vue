@@ -2,7 +2,7 @@
   #app
     .ui.labeled.icon.menu
       router-link.item(to="/" exact='')
-        i.fat-only.home.icon
+        i.fat-only.suitcase.icon
         span 首頁
       router-link.item(to="/foods" exact='')
         i.fat-only.book.icon
