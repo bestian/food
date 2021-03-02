@@ -8,10 +8,10 @@
         i.fat-only.book.icon
         span 食譜
       router-link.item(to="/tembei" exact='')
-        i.fat-only.circle.icon
+        i.fat-only.tablet.icon
         span 天貝
       router-link.item(to="/snacks" exact='')
-        i.fat-only.bullseye.icon
+        i.fat-only.certificate.icon
         span 點心
       router-link.item(to="/thoughts" exact='')
         i.fat-only.comments.icon
