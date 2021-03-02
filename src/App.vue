@@ -7,6 +7,9 @@
       router-link.item(to="/foods" exact='')
         i.fat-only.book.icon
         span 食譜
+      router-link.item(to="/snacks" exact='')
+        i.fat-only.bullseye.icon
+        span 點心
       router-link.item(to="/thoughts" exact='')
         i.fat-only.comments.icon
         span 小記
@@ -134,6 +137,10 @@ img.small {
     left: 0;
     height: 5em;
   }
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 </style>
