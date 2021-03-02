@@ -1,9 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Intro from '@/components/Intro.vue';
-import Foods from '@/components/Foods.vue';
-import Snack from '@/components/Snack.vue';
-import Tembei from '@/components/Tembei.vue';
 import Item from '@/components/Item.vue';
 import Tem from '@/components/Tem.vue';
 import Ack from '@/components/Ack.vue';
@@ -24,17 +21,17 @@ export default new Router({
     {
       path: '/foods',
       name: 'Foods',
-      component: Foods,
+      component: () => import('@/components/Foods.vue'),
     },
     {
       path: '/snacks',
       name: 'Snack',
-      component: Snack,
+      component: () => import('@/components/Snack.vue'),
     },
     {
       path: '/tembei',
       name: 'Tembei',
-      component: Tembei,
+      component: () => import('@/components/Tembei.vue'),
     },
     {
       path: '/item/:id',
