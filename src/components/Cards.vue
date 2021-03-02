@@ -20,7 +20,7 @@
         hr
         .ui.list
           .item(v-for='(p, idx) in f.p.slice(0,5)', v-bind:key='idx')
-            vue-simple-markdown(:source="p")
+            span(v-html="p")
         br
   .ui.animated.four.doubling.cards.container(
   v-show = "mode == 'avatar'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")

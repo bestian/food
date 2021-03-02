@@ -17,7 +17,7 @@
           hr
           .ui.bulleted.list
             .item(v-for='(p, idx) in pop.p', v-bind:key='idx')
-              vue-simple-markdown(:source="p")
+              span(v-html="p")
         br.thin-only
         .small.image.thin-only(v-if="pop.is")
           .ui.bulleted.list
