@@ -29,10 +29,12 @@
         .ui.vertical.buttons
           ShareNetwork.ui.huge.blue.button(network="facebook", :url="'https://food.bestian.tw/#/ack/' + $route.params.id", title="自然美食DIY", :description="'自然美食DIY - ' + pop.t", :quote="'簡單又美好的食譜 - ' + pop.t", @click="trackButton('share', 5)")
             i.share.icon
-            | 分享此頁
+            | 分享此頁&nbsp;
+            i.facebook.icon
           router-link(to="/snacks").ui.huge.green.button
             i.arrow.left.icon
-            | 回到點心盤
+            | 回到點心盤&nbsp;
+            i.leaf.icon
 </template>
 
 <script>
