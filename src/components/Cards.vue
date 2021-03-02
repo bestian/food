@@ -16,7 +16,7 @@
       .ui.header
         span(v-if="!f.noIndex") {{(foods.length - index)}}
           i.utensil.spoon.icon(v-if ="index % 2 == 0")
-          i.hand.paper.icon(v-else)
+          i.utensil.spoon.icon(v-else)
         | {{f.t}}
       .description(v-if='f.p && f.p[0]')
         hr
@@ -34,7 +34,7 @@
       .ui.header
         span(v-if="!f.noIndex") {{(foods.length - index)}}
           i.utensil.spoon.icon(v-if ="index % 2 == 0")
-          i.hand.paper.icon(v-else)
+          i.utensil.spoon.icon(v-else)
         | {{f.t}}
       .description(v-if='f.p && f.p[0] && f.long')
         | 說明：
@@ -52,7 +52,7 @@
         .description
           span(v-if="!f.noIndex") {{(foods.length - index)}}
             i.utensil.spoon.icon(v-if ="index % 2 == 0")
-            i.hand.paper.icon(v-else)
+            i.utensil.spoon.icon(v-else)
           | {{f.t.substr(0,6)}}{{ f.t.substr(0,6) == f.t ? '' : '...'}}
   transition(name="fade")
     pop(:foods = "foods", v-show="showPop")
