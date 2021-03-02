@@ -15,7 +15,8 @@
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .ui.header
         span(v-if="!f.noIndex") {{(foods.length - index)}}
-          i.utensil.spoon.icon
+          i.utensil.spoon.icon(v-if ="index % 2 == 0")
+          i.hand.paper.icon(v-else)
         | {{f.t}}
       .description(v-if='f.p && f.p[0]')
         hr
@@ -32,7 +33,8 @@
       .filler(v-if = "!f.long")
       .ui.header
         span(v-if="!f.noIndex") {{(foods.length - index)}}
-          i.utensil.spoon.icon
+          i.utensil.spoon.icon(v-if ="index % 2 == 0")
+          i.hand.paper.icon(v-else)
         | {{f.t}}
       .description(v-if='f.p && f.p[0] && f.long')
         | 說明：
@@ -49,7 +51,8 @@
           img(:src="'/static/images/' + f.i")
         .description
           span(v-if="!f.noIndex") {{(foods.length - index)}}
-            i.utensil.spoon.icon
+            i.utensil.spoon.icon(v-if ="index % 2 == 0")
+            i.hand.paper.icon(v-else)
           | {{f.t.substr(0,6)}}{{ f.t.substr(0,6) == f.t ? '' : '...'}}
   transition(name="fade")
     pop(:foods = "foods", v-show="showPop")
