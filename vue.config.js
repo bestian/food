@@ -3,7 +3,7 @@ module.exports = {
   productionSourceMap: true,
   pwa: {
     workboxOptions: {
-      exclude: [/\.gitkeep/]
+      exclude: [/\.gitkeep/, /\.jpg/]
     }
   },
   publicPath: process.env.NODE_ENV === 'production'
