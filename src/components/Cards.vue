@@ -14,7 +14,8 @@
       .big.image
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .ui.header
-        span(v-if="!f.noIndex") {{(foods.length - index)}}.
+        span(v-if="!f.noIndex") {{(foods.length - index)}}
+          i.utensil.spoon.icon
         | {{f.t}}
       .description(v-if='f.p && f.p[0]')
         hr
@@ -30,7 +31,8 @@
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .filler(v-if = "!f.long")
       .ui.header
-        span(v-if="!f.noIndex") {{(foods.length - index)}}.
+        span(v-if="!f.noIndex") {{(foods.length - index)}}
+          i.utensil.spoon.icon
         | {{f.t}}
       .description(v-if='f.p && f.p[0] && f.long')
         | 說明：
