@@ -184,7 +184,7 @@ img.small:hover {
 .square {
   margin: 1em auto;
   width: 85%;
-  height: 35vmin;
+  height: 45vmin;
   background-size: cover;
   background-position: center;
   border-radius: 15px;
