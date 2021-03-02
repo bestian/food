@@ -1,6 +1,18 @@
 <template lang="pug">
 .hello
   vue-headful(:title="getTitle() + '@' + title")
+  router-link(:to = "'/item/' + ((parseInt($route.params.id) - 1 + foods.length) % foods.length)")#left.fat-only
+    i.angle.left.icon
+    .small
+      i.utensil.spoon.icon
+      span {{ foods[(parseInt($route.params.id) - 1 + foods.length) % foods.length].t }}
+      img(:src="'/static/images/' + foods[(parseInt($route.params.id) - 1 + foods.length) % foods.length].i", alt="foods[(parseInt($route.params.id) - 1 + foods.length) % foods.length].t")
+  router-link(:to = "'/item/' + ((parseInt($route.params.id) + 1 + foods.length) % foods.length)")#right.fat-only
+    i.angle.right.icon
+    .small
+      i.utensil.spoon.icon
+      span {{ foods[(parseInt($route.params.id) + 1 + foods.length) % foods.length ].t }}
+      img(:src="'/static/images/' + foods[(parseInt($route.params.id) + 1 + foods.length) % foods.length].i", alt="foods[(parseInt($route.params.id) + 1 + foods.length) % foods.length].t")
   .ui.grid.container
     .ui.doubling.two.column.row
       .column
@@ -50,6 +62,9 @@ export default {
     };
   },
   methods: {
+    parseInt(n) {
+      return parseInt(n, 10);
+    },
     has(j, k) {
       if (!k) return true;
       return JSON.stringify(j).indexOf(k) > -1;
@@ -75,6 +90,9 @@ export default {
   watch: {
     foods(val) {
       this.pop = val[this.$route.params.id];
+    },
+    $route() {
+      this.pop = this.foods[this.$route.params.id] || {};
     },
   },
 };
@@ -118,4 +136,54 @@ export default {
 img {
   border-radius: 15px;
 }
+
+#left {
+  position: fixed;
+  z-index: 999;
+  top: 40vh;
+  left: 1em;
+  font-size: 42px;
+  text-align: left;
+}
+
+#right {
+  position: fixed;
+  z-index: 999;
+  top: 40vh;
+  right: 1em;
+  font-size: 42px;
+  text-align: right;
+}
+
+#left i, #right i {
+  background-color: white;
+  border-radius: 5px;
+  padding: .3em;
+}
+
+.small {
+  position: relative;
+  font-size: 16px;
+  background-color: white;
+  border-radius: 5px;
+  padding: .2em;
+}
+
+.small span {
+  opacity: .81;
+  transition: all .3s ease;
+}
+
+.small:hover span {
+  opacity: 1;
+}
+
+.small img {
+  height: 3em;
+  position: absolute;
+  top: 2em;
+  left: 1em;
+  opacity: 1;
+}
+
 </style>
