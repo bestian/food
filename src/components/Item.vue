@@ -1,13 +1,13 @@
 <template lang="pug">
 .hello
   vue-headful(:title="getTitle() + '@' + title")
-  router-link(:to = "'/item/' + ((parseInt($route.params.id) - 1 + foods.length) % foods.length)")#left.fat-only
+  // router-link(:to = "'/item/' + ((parseInt($route.params.id) - 1 + foods.length) % foods.length)")#left.fat-only
     i.angle.left.icon
     .small
       i.utensil.spoon.icon
       span {{ foods[(parseInt($route.params.id) - 1 + foods.length) % foods.length].t }}
       img(:src="'/static/images/' + foods[(parseInt($route.params.id) - 1 + foods.length) % foods.length].i", alt="foods[(parseInt($route.params.id) - 1 + foods.length) % foods.length].t")
-  router-link(:to = "'/item/' + ((parseInt($route.params.id) + 1 + foods.length) % foods.length)")#right.fat-only
+  // router-link(:to = "'/item/' + ((parseInt($route.params.id) + 1 + foods.length) % foods.length)")#right.fat-only
     i.angle.right.icon
     .small
       i.utensil.spoon.icon
