@@ -10,11 +10,12 @@
   .ui.animated.two.doubling.cards.container(
   v-show = "mode == 'image'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice().reverse().slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
-    :to = "'/item/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
+    :to = "'/' + (f.pop || 'item') + '/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
       .big.image
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .ui.header
-        | {{(foods.length - index)}}. {{f.t}}
+        span(v-if="!f.noIndex") {{(foods.length - index)}}.
+        | {{f.t}}
       .description(v-if='f.p && f.p[0]')
         hr
         .ui.list
@@ -24,26 +25,28 @@
   .ui.animated.four.doubling.cards.container(
   v-show = "mode == 'avatar'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice().reverse().slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
-    :to = "'/item/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
+    :to = "'/' + (f.pop || 'item') + '/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
       .small.image
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .filler(v-if = "!f.long")
       .ui.header
-        | {{(foods.length - index)}}. {{f.t}}
+        span(v-if="!f.noIndex") {{(foods.length - index)}}.
+        | {{f.t}}
       .description(v-if='f.p && f.p[0] && f.long')
         | 說明：
         hr
-        ol.ui.ordered.list
+        ul.ui.bulleted.list
           li.item(v-for='(p, idx) in f.p', v-bind:key='idx') {{ p }}
   .ui.horizontal.grid.container(
   v-show = "mode == 'list'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     .ui.eight.column.doubling.row
       router-link.column.text(v-for='(f, index) in foods.slice().reverse().slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
-        :to = "'/item/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
+        :to = "'/' + (f.pop || 'item') + '/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
         .image.ui.avatar
           img(:src="'/static/images/' + f.i")
         .description
-          | {{(foods.length - index)}}. {{f.t.substr(0,6)}}{{ f.t.substr(0,6) == f.t ? '' : '...'}}
+          span(v-if="!f.noIndex") {{(foods.length - index)}}.
+          | {{f.t.substr(0,6)}}{{ f.t.substr(0,6) == f.t ? '' : '...'}}
   transition(name="fade")
     pop(:foods = "foods", v-show="showPop")
 </template>

@@ -5,6 +5,7 @@ import Foods from '@/components/Foods.vue';
 import Snack from '@/components/Snack.vue';
 import Tembei from '@/components/Tembei.vue';
 import Item from '@/components/Item.vue';
+import Tem from '@/components/Tem.vue';
 import Thoughts from '@/components/Thoughts.vue';
 import Baby from '@/components/Baby.vue';
 import Outer from '@/components/Outer.vue';
@@ -38,6 +39,11 @@ export default new Router({
       path: '/item/:id',
       name: 'item',
       component: Item,
+    },
+    {
+      path: '/tem/:id',
+      name: 'tem',
+      component: Tem,
     },
     {
       path: '/thoughts',
