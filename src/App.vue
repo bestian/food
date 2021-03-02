@@ -5,7 +5,7 @@
         i.fat-only.suitcase.icon
         span 首頁
       router-link.item(to="/foods" exact='')
-        i.fat-only.book.icon
+        i.fat-only.utensil.spoon.icon
         span 食譜
       router-link.item(to="/tembei" exact='')
         i.fat-only.bullseye.icon
