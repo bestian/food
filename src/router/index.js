@@ -44,7 +44,7 @@ export default new Router({
       component: Tem,
     },
     {
-      path: '/Ack/:id',
+      path: '/ack/:id',
       name: 'ack',
       component: Ack,
     },
