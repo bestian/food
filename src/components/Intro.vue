@@ -5,7 +5,9 @@
     router-link(to="/foods")
       img.float.left(src="/img/elf.png", alt="elf")
     h2.center Ｈi 這裡用來存放Hsinyi的煮食紀錄
-    h3.center 點「食譜」可以看到簡記分享
+    h3.center 點「
+      router-link(to="/foods") 食譜
+      | 」可以看到簡記分享
       br
       | FB分享請見粉絲頁-
       a(href="https://www.facebook.com/%E7%9C%9F%E8%94%AC%E6%9C%8D-110229097348056/", target="_blank", rel="noopener noreferrer")
