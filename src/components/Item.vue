@@ -30,7 +30,7 @@
           hr
           .ui.bulleted.list
             .item(v-for='(p, idx) in pop.p', v-bind:key='idx')
-              span(v-html="p")
+              span.hi(v-html="p")
         br.thin-only
         .small.image.thin-only(v-if="pop.is")
           .ui.bulleted.list
@@ -186,6 +186,10 @@ img {
   top: 2em;
   left: 1em;
   opacity: 1;
+}
+
+.hi {
+  line-height: 1.35;
 }
 
 </style>

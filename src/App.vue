@@ -27,7 +27,7 @@
         span 嬰幼兒
         span 食譜
       .right.menu.fat-only
-        a.item(href="https://www.github.com/bestian/food/", target="_blank", rel="noopener noreferrer")
+        // a.item(href="https://www.github.com/bestian/food/", target="_blank", rel="noopener noreferrer")
           i.github.icon
           | 原始碼
         a.item(href = "https://www.facebook.com/sharer/sharer.php?u=https://food.bestian.tw/", target="_blank", rel="noopener noreferrer")
