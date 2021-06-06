@@ -84,6 +84,17 @@ export default {
       this.n += 20;
     },
   },
+  mounted() {
+    if (localStorage.getItem('key')) {
+      this.mySearch = localStorage.getItem('key');
+    }
+  },
+  watch: {
+    mySearch(val) {
+      console.log(val);
+      localStorage.setItem('key', val);
+    },
+  },
 };
 </script>
 

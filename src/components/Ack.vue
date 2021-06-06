@@ -35,6 +35,9 @@
             i.arrow.left.icon
             | 回到點心盤&nbsp;
             i.leaf.icon
+          a(@click="save()").ui.huge.orange.button
+            i.copy.icon
+            | 複製連結&nbsp;
 </template>
 
 <script>
@@ -52,6 +55,42 @@ export default {
     };
   },
   methods: {
+    save() {
+      function fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        // Avoid scrolling to bottom
+        textArea.style.top = '0';
+        textArea.style.left = '0';
+        textArea.style.position = 'fixed';
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+          document.execCommand('copy');
+        } catch (err) {
+          console.error('Fallback: Oops, unable to copy', err);
+        }
+
+        document.body.removeChild(textArea);
+      }
+      function copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+          fallbackCopyTextToClipboard(text);
+          return;
+        }
+        navigator.clipboard.writeText(text).then(() => {
+          console.log('Async: Copying to clipboard was successful!');
+        }, (err) => {
+          console.error('Async: Could not copy text: ', err);
+        });
+      }
+      // eslint-disable-next-line
+      copyTextToClipboard('https://food.bestian.tw/#/ack/' + this.$route.params.id);
+      alert('連結已複製');
+    },
     has(j, k) {
       if (!k) return true;
       return JSON.stringify(j).indexOf(k) > -1;
