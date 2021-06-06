@@ -16,7 +16,9 @@
   .ui.grid.container
     .ui.doubling.two.column.row
       .column
-        .big.image
+        .big.image(v-if="pop.v")
+          video(controls, :src="'/static/videos/' + pop.v")
+        .big.image(v-if="pop.i")
           a(:href="'/static/images/' + pop.i", target="_blank", rel="noopener noreferrer")
             .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
       .column

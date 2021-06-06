@@ -26,7 +26,9 @@
         .column
           router-link(:to="'/item/' + (foods.length - 1)")
             h3 最新更新1：{{foods[foods.length - 1].t}}
-            .square(:style = "{ 'background-image' : 'url(/static/images/' + foods[foods.length - 1].i + ')' }")
+            .square(v-if ="foods[foods.length - 1].v")
+              video(:src="'/static/videos/' + foods[foods.length - 1].v")
+            .square(v-if ="foods[foods.length - 1].i", :style = "{ 'background-image' : 'url(/static/images/' + foods[foods.length - 1].i + ')' }")
         .column
           router-link(:to="'/item/' + (foods.length - 2)")
             h3 最新更新2：{{foods[foods.length - 2].t}}

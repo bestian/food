@@ -98,6 +98,10 @@ export default {
   }
 }
 
+video {
+  width: 100%;
+}
+
 a, button, .clickable {
   cursor: pointer !important;
 }
