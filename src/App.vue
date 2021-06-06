@@ -99,7 +99,19 @@ export default {
 }
 
 video {
+  margin-top: 2em;
+  border-radius: 15px;
   width: 100%;
+  -webkit-box-shadow: 0px 5px 10px 2px #5B5B5B;
+  box-shadow: 0px 5px 10px 2px #5B5B5B;
+}
+
+.ui.card>.image, .ui.cards>.card>.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  height: 66%;
 }
 
 a, button, .clickable {

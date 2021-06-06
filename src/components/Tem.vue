@@ -31,7 +31,7 @@
             i.share.icon
             | 分享此頁&nbsp;
             i.facebook.icon
-          router-link(to="/tembei").ui.huge.green.button
+          router-link(to="/tembei", v-if="check()").ui.huge.green.button
             i.arrow.left.icon
             | 回上一頁&nbsp;
             i.bullseye.icon
@@ -55,6 +55,9 @@ export default {
     };
   },
   methods: {
+    check() {
+      return localStorage.getItem('key');
+    },
     save() {
       function fallbackCopyTextToClipboard(text) {
         const textArea = document.createElement('textarea');
