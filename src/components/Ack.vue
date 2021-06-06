@@ -33,7 +33,7 @@
             i.facebook.icon
           router-link(to="/snacks").ui.huge.green.button
             i.arrow.left.icon
-            | 回到點心盤&nbsp;
+            | 回上一頁&nbsp;
             i.leaf.icon
           a(@click="save()").ui.huge.orange.button
             i.copy.icon

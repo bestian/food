@@ -45,7 +45,7 @@
             i.facebook.icon
           router-link(to="/foods").ui.huge.green.button
             i.arrow.left.icon
-            | 回到食譜&nbsp;
+            | 回上一頁&nbsp;
             i.utensil.spoon.icon
           a(@click="save()").ui.huge.orange.button
             i.copy.icon

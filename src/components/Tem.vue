@@ -33,7 +33,7 @@
             i.facebook.icon
           router-link(to="/tembei").ui.huge.green.button
             i.arrow.left.icon
-            | 回到天貝&nbsp;
+            | 回上一頁&nbsp;
             i.bullseye.icon
           a(@click="save()").ui.huge.orange.button
             i.copy.icon
