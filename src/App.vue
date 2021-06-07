@@ -74,7 +74,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,PingFang TC,Microsoft JhengHei,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -102,7 +102,6 @@ export default {
 }
 
 video {
-  margin-top: 2em;
   border-radius: 15px;
   width: 100%;
   -webkit-box-shadow: 0px 5px 10px 2px #5B5B5B;

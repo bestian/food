@@ -113,6 +113,7 @@ export default {
 
 .card .header {
   white-space: pre-line;
+  font-size: 22px;
   padding: 1em;
 }
 

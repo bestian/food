@@ -31,7 +31,7 @@
         .description(v-if='pop.p', :class = "{long: pop.p.length > 2 || (pop.p[0] && pop.p[0].length > 30)}")
           hr
           .ui.bulleted.list
-            .item(v-for='(p, idx) in pop.p', v-bind:key='idx')
+            .item(v-for='(p, idx) in pop.p', :class = "{nobullet: p.substr(0,1) == '【'}", v-bind:key='idx')
               span.hi(v-html="p")
         br.thin-only
         .small.image.thin-only(v-if="pop.is")
@@ -241,6 +241,18 @@ img {
 
 .hi {
   line-height: 1.35;
+}
+
+.nobullet::before {
+  content: '' !important;
+}
+
+.nobullet {
+  margin-top: 1em;
+}
+
+p {
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,PingFang TC,Microsoft JhengHei,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,sans-serif;
 }
 
 </style>
