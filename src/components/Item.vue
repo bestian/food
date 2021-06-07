@@ -84,6 +84,7 @@ export default {
         document.body.appendChild(textArea);
         textArea.focus();
         textArea.select();
+        textArea.setSelectionRange(0, 99999);
 
         try {
           document.execCommand('copy');
@@ -93,7 +94,7 @@ export default {
 
         document.body.removeChild(textArea);
       }
-      function copyTextToClipboard(text) {
+      /* function copyTextToClipboard(text) {
         if (!navigator.clipboard) {
           fallbackCopyTextToClipboard(text);
           return;
@@ -103,10 +104,11 @@ export default {
         }, (err) => {
           console.error('Async: Could not copy text: ', err);
         });
-      }
+      } */
       // eslint-disable-next-line
-      copyTextToClipboard('https://food.bestian.tw/#/item/' + this.$route.params.id);
-      alert('連結已複製');
+      fallbackCopyTextToClipboard('https://food.bestian.tw/#/item/' + this.$route.params.id);
+      // eslint-disable-next-line
+      alert('連結已複製\nhttps://food.bestian.tw/#/item/' + this.$route.params.id);
     },
     parseInt(n) {
       return parseInt(n, 10);
