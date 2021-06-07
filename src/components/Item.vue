@@ -16,7 +16,9 @@
   .ui.grid.container
     .ui.doubling.two.column.row
       .column
-        .big.image
+        .big.image(v-if="pop.v")
+          video(controls, :src="'/static/videos/' + pop.v")
+        .big.image(v-if="pop.i")
           a(:href="'/static/images/' + pop.i", target="_blank", rel="noopener noreferrer")
             .square(:style = "{ 'background-image' : 'url(/static/images/' + pop.i + ')' }")
       .column
@@ -43,10 +45,13 @@
             i.share.icon
             | 分享此頁&nbsp;
             i.facebook.icon
-          router-link(to="/foods").ui.huge.green.button
+          router-link(to="/foods", v-if = "check()").ui.huge.green.button
             i.arrow.left.icon
-            | 回到食譜&nbsp;
+            | 回上一頁&nbsp;
             i.utensil.spoon.icon
+          a(@click="save()").ui.huge.orange.button
+            i.copy.icon
+            | 複製連結&nbsp;
 </template>
 
 <script>
@@ -64,6 +69,45 @@ export default {
     };
   },
   methods: {
+    check() {
+      return localStorage.getItem('key');
+    },
+    save() {
+      function fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        // Avoid scrolling to bottom
+        textArea.style.top = '0';
+        textArea.style.left = '0';
+        textArea.style.position = 'fixed';
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+          document.execCommand('copy');
+        } catch (err) {
+          console.error('Fallback: Oops, unable to copy', err);
+        }
+
+        document.body.removeChild(textArea);
+      }
+      function copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+          fallbackCopyTextToClipboard(text);
+          return;
+        }
+        navigator.clipboard.writeText(text).then(() => {
+          console.log('Async: Copying to clipboard was successful!');
+        }, (err) => {
+          console.error('Async: Could not copy text: ', err);
+        });
+      }
+      // eslint-disable-next-line
+      copyTextToClipboard('https://food.bestian.tw/#/item/' + this.$route.params.id);
+      alert('連結已複製');
+    },
     parseInt(n) {
       return parseInt(n, 10);
     },

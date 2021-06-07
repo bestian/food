@@ -13,6 +13,9 @@ import 'semantic-ui-css/semantic.min.css';
 import VueSocialSharing from 'vue-social-sharing';
 import App from './App.vue';
 import router from './router';
+import '@babel/polyfill';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 Vue.use(VueSocialSharing);
 

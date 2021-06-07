@@ -11,7 +11,9 @@
   v-show = "mode == 'image'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice().reverse().slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     :to = "'/' + (f.pop || 'item') + '/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
-      .big.image
+      .big.image(v-if="f.v")
+          video(:src="'/static/videos/' + f.v")
+      .big.image(v-if="f.i")
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .ui.header
         span(v-if="!f.noIndex") {{(foods.length - index)}}
@@ -29,7 +31,9 @@
   v-show = "mode == 'avatar'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice().reverse().slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     :to = "'/' + (f.pop || 'item') + '/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
-      .small.image
+      .small.image(v-if="f.v")
+          video(:src="'/static/videos/' + f.v")
+      .small.image(v-if="f.i")
         .square(:style = "{ 'background-image' : 'url(/static/images/' + f.i + ')' }")
       .filler(v-if = "!f.long")
       .ui.header
@@ -49,7 +53,9 @@
     .ui.eight.column.doubling.row
       router-link.column.text(v-for='(f, index) in foods.slice().reverse().slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
         :to = "'/' + (f.pop || 'item') + '/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
-        .image.ui.avatar
+        .image.ui.avatar(v-if="f.v")
+          video(:src="'/static/videos/' + f.v")
+        .image.ui.avatar(v-if="f.i")
           img(:src="'/static/images/' + f.i")
         .description
           span(v-if="!f.noIndex") {{(foods.length - index)}}
@@ -82,6 +88,17 @@ export default {
     },
     loadMore() {
       this.n += 20;
+    },
+  },
+  mounted() {
+    if (localStorage.getItem('key')) {
+      this.mySearch = localStorage.getItem('key');
+    }
+  },
+  watch: {
+    mySearch(val) {
+      console.log(val);
+      localStorage.setItem('key', val);
     },
   },
 };
