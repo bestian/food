@@ -38,6 +38,7 @@
           a(@click="save()").ui.huge.orange.button
             i.copy.icon
             | 複製連結&nbsp;
+          h3(v-show="s") {{s}}
 </template>
 
 <script>
@@ -52,9 +53,13 @@ export default {
     return {
       msg: '自然美食DIY',
       pop: {},
+      s: '',
     };
   },
   methods: {
+    show(t) {
+      this.s = t;
+    },
     check() {
       return localStorage.getItem('key');
     },
@@ -94,7 +99,7 @@ export default {
       // eslint-disable-next-line
       fallbackCopyTextToClipboard('https://food.bestian.tw/#/tem/' + this.$route.params.id);
       // eslint-disable-next-line
-      alert('連結已複製\nhttps://food.bestian.tw/#/tem/' + this.$route.params.id);
+      this.show('本頁連結為: https://food.bestian.tw/#/tem/' + this.$route.params.id);
     },
     has(j, k) {
       if (!k) return true;
