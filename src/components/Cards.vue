@@ -7,7 +7,7 @@
         option(v-for = "f in foods", :value = "f.t")
 
   hr
-  .ui.animated.two.doubling.cards.container(
+  .ui.animated.two.doubling.relexed.cards.container(
   v-show = "mode == 'image'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice().reverse().slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     :to = "'/' + (f.pop || 'item') + '/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
@@ -27,7 +27,7 @@
           .item(v-for='(p, idx) in f.p.slice(0,5)', v-bind:key='idx')
             span(v-html="p")
         br
-  .ui.animated.four.doubling.cards.container(
+  .ui.animated.four.doubling.relexed.cards.container(
   v-show = "mode == 'avatar'", v-infinite-scroll="loadMore", infinite-scroll-distance="10")
     router-link.ui.card(v-for='(f, index) in foods.slice().reverse().slice(0, n)', v-bind:key='index', v-show='has(f, mySearch)',
     :to = "'/' + (f.pop || 'item') + '/' + (foods.length - index - 1)", :class="{ disabled: f.pop == 'no'}")
@@ -200,6 +200,22 @@ i.angle.double.right.arrow.icon {
 
 li.item {
   padding-bottom: .82em !important;
+}
+
+.ui.four.cards>.card {
+    width: calc(25% - 3em);
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.four.doubling.cards>.card {
+      width: calc(50% - 4em);
+      margin-left: 2em;
+      margin-right: 2em;
+  }
 }
 
 </style>
