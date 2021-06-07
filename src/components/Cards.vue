@@ -117,12 +117,20 @@ export default {
   padding: 1em;
 }
 
-.animated .card{
+.animated .card {
   position: relative;
   top: 0;
 }
 .animated .card:hover {
   top: -2px;
+}
+
+.card .square {
+  border-radius: 5px 5px 0 0 !important;
+}
+
+.card video {
+  border-radius: 5px 5px 0 0 !important;
 }
 
 .animated .card:hover .ui.header {
