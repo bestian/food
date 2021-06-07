@@ -7,12 +7,15 @@
       router-link.item(to="/foods" exact='')
         i.fat-only.book.icon
         span 食譜
-      router-link.item(to="/tembei" exact='')
+      router-link.fat-only.item(to="/tembei" exact='')
         i.fat-only.bullseye.icon
         span 天貝
-      router-link.item(to="/snacks" exact='')
+      router-link.fat-only.item(to="/snacks" exact='')
         i.fat-only.leaf.icon
         span 點心
+      router-link.item(to="/videos" exact='')
+        i.fat-only.video.icon
+        span 影音
       router-link.item(to="/thoughts" exact='')
         i.fat-only.comments.icon
         span 小記
@@ -111,7 +114,6 @@ video {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  height: 66%;
 }
 
 a, button, .clickable {

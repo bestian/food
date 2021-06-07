@@ -8,6 +8,7 @@ import Thoughts from '@/components/Thoughts.vue';
 import Baby from '@/components/Baby.vue';
 import Outer from '@/components/Outer.vue';
 import Diet from '@/components/Diet.vue';
+import Videos from '@/components/Videos.vue';
 
 Vue.use(Router);
 
@@ -67,6 +68,11 @@ export default new Router({
       path: '/diet',
       name: 'Diet',
       component: Diet,
+    },
+    {
+      path: '/videos',
+      name: 'Videos',
+      component: Videos,
     },
   ],
 });
