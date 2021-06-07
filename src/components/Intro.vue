@@ -158,7 +158,7 @@ img.small:hover {
 
 .main {
   text-align: left;
-  margin: 2em calc(100px + 10vw);
+  margin: 2em calc(50px + 10vw);
   font-size: 16px;
 }
 
