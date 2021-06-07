@@ -34,7 +34,7 @@
             h3 最新更新2：{{foods[foods.length - 2].t}}
             div(v-if ="foods[foods.length - 2].v")
               video(controls, :src="'/static/videos/' + foods[foods.length - 2].v")
-            .square(:style = "{ 'background-image' : 'url(/static/images/' + foods[foods.length - 2].i + ')' }")
+            .square(v-if ="foods[foods.length - 2].i", :style = "{ 'background-image' : 'url(/static/images/' + foods[foods.length - 2].i + ')' }")
     // br
     // img.small.image(v-for="(image, i) in images", :src="image", :key="i", @click="index = i", :alt="image")
     // vue-gallery-slideshow(:images="images", :index="index")
